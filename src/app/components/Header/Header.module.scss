@@ -1,0 +1,18 @@
+.layout-header {
+    &-container {
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 13px 0;
+        display: grid;
+        align-items: center;
+        grid-template-columns: 14.5% 59.9% 14.9% 4.2% 4.2% 4%;
+
+        // &--logo {
+        // }
+
+        &--actions {
+            display: flex;
+            gap: 30px;
+        }
+    }
+}

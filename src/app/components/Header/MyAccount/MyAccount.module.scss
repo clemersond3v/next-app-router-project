@@ -1,0 +1,19 @@
+.myAccount {
+    width: 180px;
+    height: 42.76px;
+    display: flex;
+    align-items: center;
+    border: 1.5px solid #b7b9de;
+    border-radius: 6px;
+    padding: 0 10px;
+    cursor: pointer;
+    position: relative;
+    max-width: 180px;
+
+    .icon__arrow-header {
+        width: 8px;
+        position: absolute;
+        top: 14px;
+        right: 10px;
+    }
+}
