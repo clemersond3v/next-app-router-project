@@ -1,0 +1,14 @@
+.menu-departments {
+    display: flex;
+    gap: 20px;
+    max-width: 1025px;
+    margin: 15px auto 0;
+
+    &--item {
+        a {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
