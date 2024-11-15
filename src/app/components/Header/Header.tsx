@@ -1,15 +1,19 @@
 import Link from 'next/link';
+import { FiHeart } from "react-icons/fi";
 import TopBar from './TopBar/TopBar';
 import styles from './Header.module.scss';
 import SearchBar from './SearchBar/SearchBar';
 import MyAccount from './MyAccount/MyAccount';
 import Menu from './Menu/Menu';
+import Minicart from './Minicart/Minicart';
+import AlertNotifications from './AlertNotifications/AlertNotifications';
+import Submenu from './Submenu/Submenu';
 
 const Header: React.FC = () => {
     return(
         <header className={styles["layout-header"]}>
             <TopBar />
-
+            <Submenu />
             <div className={styles["layout-header-container"]}>
                 <div className={styles["layout-header-container--logo"]}>
                     <Link href={"/"}>
@@ -28,35 +32,16 @@ const Header: React.FC = () => {
                 <div className={styles["layout-header-container--actions"]}>
                     <div className={styles["layout-header-container--actions-wishlist"]}>
                         <Link href="/wishlist">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none">
-                                <path d="M3.79.4C2.63.743 1.2 2.038.648 3.238.305 3.943.19 4.533.19 5.543c0 2.247.458 2.933 5.105 7.543 3.6 3.6 4.02 3.962 4.61 3.962.59 0 1.01-.362 4.61-3.943 4.647-4.629 5.104-5.315 5.104-7.562 0-1.733-.552-2.972-1.81-4.076-2.038-1.79-4.99-1.81-7.028-.02l-.876.782-.876-.781C7.6.19 5.695-.19 3.79.4zm3.334 2.114c.324.172 1.066.781 1.676 1.353l1.105 1.047L11.2 3.676c.99-.933 1.524-1.295 2.21-1.466a3.75 3.75 0 013.028.59c1.143.819 1.62 2.876.99 4.229-.152.323-1.904 2.228-3.904 4.21l-3.62 3.618-3.618-3.619c-2-1.98-3.753-3.886-3.905-4.21-.4-.857-.362-2.228.095-3.123.857-1.657 2.914-2.286 4.648-1.39z" fill="#001E62"></path>
-                            </svg>
+                            <FiHeart size={25} color="#001e62" />
                         </Link>
                     </div>
 
                     <div className={styles["layout-header-container--actions-notifications"]}>
-                        <svg xmlns="http://www.w3.org/2000/svg" id="asics-bell" version="1.0" width="20" height="20" preserveAspectRatio="xMidYMid meet">
-                            <g transform="translate(0.000000,105.000000) scale(0.100000,-0.100000)" fill="rgb(0, 30, 98)" stroke="none">
-                            <path d="M432 1027 c-6 -7 -12 -30 -14 -51 -3 -36 -6 -40 -45 -51 -101 -30 -185 -105 -231 -204 -24 -52 -26 -70 -31 -234 -6 -186 -9 -196 -53 -197 -22 0 -48 -27 -48 -50 0 -43 24 -50 161 -50 l129 0 0 -28 c0 -49 41 -114 90 -139 52 -28 91 -29 146 -4 52 23 85 70 92 127 l5 44 131 0 c142 0 156 5 156 50 0 32 -17 50 -45 50 -47 0 -53 23 -57 210 -3 168 -4 177 -31 232 -15 31 -47 75 -70 99 -41 41 -145 99 -179 99 -14 0 -18 9 -18 38 0 25 -7 45 -18 55 -22 20 -55 22 -70 4z m144 -221 c28 -13 65 -41 82 -62 51 -61 62 -116 62 -296 l0 -158 -250 0 -250 0 0 166 c0 99 5 183 12 206 15 51 82 126 133 149 58 27 147 25 211 -5z m-46 -639 c0 -31 -32 -60 -66 -60 -31 1 -50 18 -59 56 l-7 27 66 0 c63 0 66 -1 66 -23z">
-                            </path>
-                            </g>
-                        </svg>
+                        <AlertNotifications />
                     </div>
 
                     <div className={styles["layout-header-container--actions-minicart"]}>
-                        <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="20" height="20" preserveAspectRatio="xMidYMid meet">
-                            <g transform="translate(0.000000,105.000000) scale(0.100000,-0.100000)" fill="#001E62" stroke="none">
-                            <path d="M26 1024 c-9 -8 -16 -24 -16 -34 0 -41 25 -50 139 -50 l107 0 53 -312 c29 -172 61 -328 70 -347 32 -64 60 -71 286 -71 181 0 203 2 232 20 18 10 38 29 46 42 18 28 97 407 97 462 0 31 -7 46 -39 77 l-39 39 -210 0 c-207 0 -211 0 -226 -22 -20 -29 -20 -34 4 -58 19 -19 33 -20 210 -20 148 0 192 -3 196 -13 6 -18 -73 -396 -87 -413 -16 -19 -362 -20 -376 -1 -5 6 -31 138 -57 292 -62 362 -71 406 -88 416 -7 5 -75 9 -150 9 -111 0 -140 -3 -152 -16z">
-                            </path>
-                            <path d="M572 654 c-12 -8 -22 -26 -22 -39 0 -41 34 -55 137 -55 80 0 96 3 113 20 11 11 20 27 20 35 0 8 -9 24 -20 35 -17 17 -33 20 -113 20 -68 0 -99 -4 -115 -16z">
-                            </path>
-                            <path d="M586 484 c-19 -18 -21 -55 -4 -72 7 -7 43 -12 90 -12 72 0 79 2 94 25 15 23 15 27 0 50 -15 23 -23 25 -91 25 -54 0 -78 -4 -89 -16z">
-                            </path>
-                            <path d="M477 130 c-14 -11 -29 -29 -32 -40 -9 -28 21 -79 51 -86 82 -21 129 92 54 131 -37 19 -42 19 -73 -5z">
-                            </path>
-                            <path d="M790 143 c-43 -16 -66 -74 -42 -109 10 -15 47 -34 67 -34 24 0 65 46 65 73 0 44 -51 84 -90 70z"></path>
-                            </g>
-                        </svg>
+                        <Minicart />
                     </div>
                 </div>
             </div>

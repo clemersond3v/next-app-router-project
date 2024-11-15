@@ -1,54 +1,41 @@
+'use client'
+
 import Image from "next/image";
+import styles from './Home.module.scss';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/autoplay'; // Importe o CSS do autoplay
+import { Autoplay } from 'swiper/modules';
+import Link from "next/link";
 
 export default function Home() {
-  return (
-    <div className="">
-      <main className="">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="">
-          <li className="">
-            Get started by editing{" "}
-            <code className="">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="">
-          <a
-            className=""
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className=""
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-    </div>
+  return (    
+    <main className={styles["home-page"]}>
+      <div className={styles["home-page--mainBanners"]}>
+        <Swiper
+          modules={[Autoplay]}
+          loop={true}
+          spaceBetween={0}
+          slidesPerView={1}
+          speed={700}                
+          autoplay={{
+            delay: 4000,
+            disableOnInteraction: false,
+          }}
+        >
+          <SwiperSlide>
+            <Link href="/" className={styles["home-page--mainBanners-item"]}>
+              <Image src='/banner-lanzamiento-noosatri16.webp' alt="banner-lanzamiento-noosatri16" width={1920} height={720} />
+            </Link>
+          </SwiperSlide>
+          <SwiperSlide>
+            <Link href="/" className={styles["home-page--mainBanners-item"]}>
+            <Image src='/banner-superblast2-nuevoscolores.webp' alt="banner-superblast2-nuevoscolores" width={1920} height={720} />
+            </Link>
+          </SwiperSlide>
+        </Swiper>
+      </div>
+    </main>    
   );
 }

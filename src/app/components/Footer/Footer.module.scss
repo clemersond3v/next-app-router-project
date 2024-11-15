@@ -1,0 +1,21 @@
+.layout-footer {
+    margin-top: 100px;
+
+    &--middle {
+        background-color: #001e62;
+        color: #ffffff;
+
+        &__container {
+            display: flex;
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 35px 50px;
+            gap: 120px;        
+        }
+         
+
+        &-menu {
+            display: flex;
+        }
+    }
+}
