@@ -1,20 +1,25 @@
 'use client'
 
+
 import Image from "next/image";
 import styles from './Home.module.scss';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/autoplay'; // Importe o CSS do autoplay
-import { Autoplay } from 'swiper/modules';
+import 'swiper/css/navigation';
+import { Autoplay, Navigation } from 'swiper/modules';
 import Link from "next/link";
+import Shelves from "./components/Shelves/Shelves";
 
 export default function Home() {
+
+  
   return (    
     <main className={styles["home-page"]}>
       <div className={styles["home-page--mainBanners"]}>
         <Swiper
-          modules={[Autoplay]}
+          modules={[Autoplay, Navigation]}
           loop={true}
           spaceBetween={0}
           slidesPerView={1}
@@ -23,6 +28,7 @@ export default function Home() {
             delay: 4000,
             disableOnInteraction: false,
           }}
+          navigation={true}
         >
           <SwiperSlide>
             <Link href="/" className={styles["home-page--mainBanners-item"]}>
@@ -35,6 +41,10 @@ export default function Home() {
             </Link>
           </SwiperSlide>
         </Swiper>
+      </div>
+
+      <div className={styles["home-shelves"]}>
+          <Shelves />
       </div>
     </main>    
   );
