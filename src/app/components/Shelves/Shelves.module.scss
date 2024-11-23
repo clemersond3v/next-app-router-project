@@ -1,0 +1,104 @@
+.shelf-item--container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 100px auto;
+
+    :global(.swiper-pagination) {
+        bottom: 0px !important;
+    }
+
+    :global(.swiper-button-prev) {
+        left: 0px !important;
+    }
+    :global(.swiper-button-next) {
+        right: 0px !important;
+    }
+
+    &-card {
+        .shelf-item {
+            max-width: 245px;
+            width: 100%;
+            box-shadow: 0 0 5px 2px #eee; 
+            border-radius: 8px;
+            margin: 10px auto 40px;
+            padding: 0 0 10px;
+        
+            &--images {
+                ul {
+                    li {
+                        img {
+                            border-radius: 8px;
+                        }
+                    }
+                }
+            }
+        
+            &--content {
+                padding: 10px;
+            }
+        
+            &--productName {
+                font-size: 14px;
+                line-height: 22px;
+                margin-bottom: 5px;
+            }
+        
+            &--productCategory {
+                font-size: 14px;
+                line-height: 18px;
+                background-color: #e4e5f399;
+                border-radius: 4px;
+                padding: 3px 5px;
+                width: fit-content;
+                margin-bottom: 5px;
+            }
+        
+            &--price {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 7px;
+                margin-bottom: 5px;
+        
+                &-old {
+                    font-size: 12px;
+                    line-height: 18px;
+                    text-decoration: line-through;
+                }
+        
+                &-new {
+                    font-size: 14px;
+                    line-height: 18px;
+                }
+            }
+        
+            &--stock {
+                font-size: 12px;
+                line-height: 18px;
+                margin-bottom: 5px;
+            }
+        
+            &--description {
+                font-size: 12px;
+                line-height: 18px;
+                margin-bottom: 5px;
+            }
+        
+            &--cta {
+                padding: 0 10px;
+                &-btn {
+                    width: 100%;
+                    height: 40px;
+                    background-color: #e4e5f399;
+                    color: #001e62;
+                    border-radius: 8px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 14px;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}
