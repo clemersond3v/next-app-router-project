@@ -1,0 +1,47 @@
+name: Lighthouse CI
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout do código
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # 2. Configurar Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      # 3. Instalar dependências
+      - name: Install dependencies
+        run: npm install
+
+      # 4. Build do projeto Next.js
+      - name: Build project
+        run: npm run build
+
+      # 5. Iniciar o servidor
+      - name: Start server
+        run: npm start &
+        env:
+          PORT: 3000
+
+      # 6. Rodar o Lighthouse
+      - name: Run Lighthouse
+        run: npx lighthouse http://localhost:3000 --output json --output-path ./lighthouse-report.json
+
+      # 7. Verificar media dos scores do Lighthouse
+      - name: Run Lighthouse CI
+        run: npx lhci autorun
+
