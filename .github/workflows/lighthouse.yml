@@ -1,0 +1,65 @@
+name: Lighthouse CI
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout do código
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # 2. Configurar Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      # 3. Instalar dependências do sistema para o Chrome e o XVFB
+      - name: Install Chrome and XVFB
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable xvfb libnss3 libatk1.0-0 libx11-xcb1 libxcomposite1 libxcursor1 libxdamage1 libxrandr2 libgbm-dev libasound2
+
+      # 4. Instalar dependências do projeto
+      - name: Install dependencies
+        run: npm install
+
+      # 5. Build do projeto Next.js
+      - name: Build project
+        run: npm run build
+
+      # 6. Iniciar o servidor local
+      - name: Start server
+        run: npm start &
+        env:
+          PORT: 3000
+
+      # 7. Esperar o servidor estar pronto
+      - name: Wait for server
+        run: sleep 10
+
+      # 8. Iniciar o XVFB e rodar o Lighthouse
+      - name: Run Lighthouse with XVFB
+        run: |
+          xvfb-run --auto-servernum --server-args="-screen 0 1920x1080x24" npx lighthouse http://localhost:3000 --output json --output-path ./lighthouse-report.json --chrome-flags="--no-sandbox --disable-setuid-sandbox"
+
+      # 9. Fazer upload do artefato
+      - name: Upload Lighthouse Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: lighthouse-report
+          path: ./lighthouse-report.json
+
+      # 10. Verificar media dos scores do Lighthouse
+      - name: Run Lighthouse CI
+        run: npx lhci autorun
+
