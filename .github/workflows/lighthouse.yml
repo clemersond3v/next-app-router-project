@@ -52,7 +52,14 @@ jobs:
         run: |
           xvfb-run --auto-servernum --server-args="-screen 0 1920x1080x24" npx lighthouse http://localhost:3000 --output json --output-path ./lighthouse-report.json --chrome-flags="--no-sandbox --disable-setuid-sandbox"
 
-      # 9. Verificar media dos scores do Lighthouse
+      # 9. Fazer upload do artefato
+      - name: Upload Lighthouse Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: lighthouse-report
+          path: ./lighthouse-report.json
+
+      # 10. Verificar media dos scores do Lighthouse
       - name: Run Lighthouse CI
         run: npx lhci autorun
 
