@@ -53,8 +53,8 @@ async function getProductsByCategory(categorySlug: string): Promise<Product[]> {
 }
 
 // **Página de Categoria**
-export default async function CategoryPage({ params }: { params: { slug?: string } }) {
-  if (!params?.slug) {
+export default async function CategoryPage({ params }: { params: { slug: string } }) {
+  if (!params.slug) {
     return notFound();
   }
 

@@ -62,8 +62,8 @@ async function getProduct(slug: string) {
 }
 
 // **Página do Produto**
-export default async function ProductPage({ params }: { params: { slug?: string } }) {
-  if (!params?.slug) {
+export default async function ProductPage({ params }: { params: { slug: string } }) {
+  if (!params.slug) {
     return notFound();
   }
 
