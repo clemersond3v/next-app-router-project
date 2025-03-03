@@ -16,24 +16,9 @@
 
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  webpack: (config) => {
-    config.module.rules.push({
-      test: /\.scss$/,
-      use: [
-        {
-          loader: "sass-loader",
-          options: {
-            implementation: require("sass"),
-          },
-        },
-      ],
-    });
-
-    return config;
-  },
-};
+const nextConfig: NextConfig = {};
 
 export default nextConfig;
+
 
 
