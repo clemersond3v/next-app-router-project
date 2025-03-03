@@ -1,0 +1,484 @@
+{
+    "products": [
+        {
+            "documentId": "1",
+            "productName": "O Mistério da Casa Verde",
+            "slug": "o-misterio-da-casa-verde",
+            "price": 86.13,
+            "oldPrice": 178.63,
+            "installments": 12,
+            "actived": true,
+            "stock": 14,
+            "description": "<p>O Mistério da Casa Verde é um livro fascinante sobre auto ajuda.</p>",
+            "images": [],
+            "category": {
+                "slug": "terror",
+                "name": "Terror"
+            }
+        },
+        {
+            "documentId": "2",
+            "productName": "Paixão Proibida",
+            "slug": "paixao-proibida",
+            "price": 35.65,
+            "oldPrice": 146.93,
+            "installments": 12,
+            "actived": true,
+            "stock": 85,
+            "description": "<p>Paixão Proibida é um livro fascinante sobre aventura.</p>",
+            "images": [],
+            "category": {
+                "slug": "auto-ajuda",
+                "name": "Auto Ajuda"
+            }
+        },
+        {
+            "documentId": "3",
+            "productName": "A Jornada das Estrelas",
+            "slug": "a-jornada-das-estrelas",
+            "price": 27.25,
+            "oldPrice": 179.27,
+            "installments": 12,
+            "actived": true,
+            "stock": 54,
+            "description": "<p>A Jornada das Estrelas é um livro fascinante sobre terror.</p>",
+            "images": [],
+            "category": {
+                "slug": "aventura",
+                "name": "Aventura"
+            }
+        },
+        {
+            "documentId": "4",
+            "productName": "Segredos para uma Vida Melhor",
+            "slug": "segredos-para-uma-vida-melhor",
+            "price": 87.25,
+            "oldPrice": 183.6,
+            "installments": 12,
+            "actived": true,
+            "stock": 37,
+            "description": "<p>Segredos para uma Vida Melhor é um livro fascinante sobre terror.</p>",
+            "images": [],
+            "category": {
+                "slug": "romance",
+                "name": "Romance"
+            }
+        },
+        {
+            "documentId": "5",
+            "productName": "Sombras na Escuridão",
+            "slug": "sombras-na-escuridao",
+            "price": 20.2,
+            "oldPrice": 123.79,
+            "installments": 12,
+            "actived": true,
+            "stock": 21,
+            "description": "<p>Sombras na Escuridão é um livro fascinante sobre auto ajuda.</p>",
+            "images": [],
+            "category": {
+                "slug": "aventura",
+                "name": "Aventura"
+            }
+        },
+        {
+            "documentId": "6",
+            "productName": "Amor em Paris",
+            "slug": "amor-em-paris",
+            "price": 55.26,
+            "oldPrice": 148.03,
+            "installments": 12,
+            "actived": true,
+            "stock": 43,
+            "description": "<p>Amor em Paris é um livro fascinante sobre aventura.</p>",
+            "images": [],
+            "category": {
+                "slug": "aventura",
+                "name": "Aventura"
+            }
+        },
+        {
+            "documentId": "7",
+            "productName": "O Heri Perdido",
+            "slug": "o-heroi-perdido",
+            "price": 90.59,
+            "oldPrice": 146.24,
+            "installments": 12,
+            "actived": true,
+            "stock": 97,
+            "description": "<p>O Herói Perdido é um livro fascinante sobre romance.</p>",
+            "images": [],
+            "category": {
+                "slug": "auto-ajuda",
+                "name": "Auto Ajuda"
+            }
+        },
+        {
+            "documentId": "8",
+            "productName": "Motivação Diária",
+            "slug": "motivacao-diaria",
+            "price": 90.77,
+            "oldPrice": 141.37,
+            "installments": 12,
+            "actived": true,
+            "stock": 90,
+            "description": "<p>Motivação Diária é um livro fascinante sobre terror.</p>",
+            "images": [],
+            "category": {
+                "slug": "auto-ajuda",
+                "name": "Auto Ajuda"
+            }
+        },
+        {
+            "documentId": "9",
+            "productName": "As Vozes da Noite",
+            "slug": "as-vozes-da-noite",
+            "price": 93.38,
+            "oldPrice": 196.95,
+            "installments": 12,
+            "actived": true,
+            "stock": 51,
+            "description": "<p>As Vozes da Noite é um livro fascinante sobre auto ajuda.</p>",
+            "images": [],
+            "category": {
+                "slug": "romance",
+                "name": "Romance"
+            }
+        },
+        {
+            "documentId": "10",
+            "productName": "Coração Selvagem",
+            "slug": "coracao-selvagem",
+            "price": 32.86,
+            "oldPrice": 172.32,
+            "installments": 12,
+            "actived": true,
+            "stock": 79,
+            "description": "<p>Coração Selvagem é um livro fascinante sobre auto ajuda.</p>",
+            "images": [],
+            "category": {
+                "slug": "romance",
+                "name": "Romance"
+            }
+        },
+        {
+            "documentId": "11",
+            "productName": "A Ilha do Tesouro Perdido",
+            "slug": "a-ilha-do-tesouro-perdido",
+            "price": 43.64,
+            "oldPrice": 165.02,
+            "installments": 12,
+            "actived": true,
+            "stock": 65,
+            "description": "<p>A Ilha do Tesouro Perdido é um livro fascinante sobre aventura.</p>",
+            "images": [],
+            "category": {
+                "slug": "romance",
+                "name": "Romance"
+            }
+        },
+        {
+            "documentId": "12",
+            "productName": "Transformação Pessoal",
+            "slug": "transformacao-pessoal",
+            "price": 47.34,
+            "oldPrice": 153.9,
+            "installments": 12,
+            "actived": true,
+            "stock": 91,
+            "description": "<p>Transformação Pessoal é um livro fascinante sobre aventura.</p>",
+            "images": [],
+            "category": {
+                "slug": "terror",
+                "name": "Terror"
+            }
+        },
+        {
+            "documentId": "13",
+            "productName": "Medo Profundo",
+            "slug": "medo-profundo",
+            "price": 49.5,
+            "oldPrice": 184.93,
+            "installments": 12,
+            "actived": true,
+            "stock": 75,
+            "description": "<p>Medo Profundo é um livro fascinante sobre auto ajuda.</p>",
+            "images": [],
+            "category": {
+                "slug": "romance",
+                "name": "Romance"
+            }
+        },
+        {
+            "documentId": "14",
+            "productName": "Sob a Luz do Luar",
+            "slug": "sob-a-luz-do-luar",
+            "price": 60.59,
+            "oldPrice": 127.37,
+            "installments": 12,
+            "actived": true,
+            "stock": 76,
+            "description": "<p>Sob a Luz do Luar é um livro fascinante sobre terror.</p>",
+            "images": [],
+            "category": {
+                "slug": "terror",
+                "name": "Terror"
+            }
+        },
+        {
+            "documentId": "15",
+            "productName": "Expedição ao Desconhecido",
+            "slug": "expedicao-ao-desconhecido",
+            "price": 33.9,
+            "oldPrice": 175.18,
+            "installments": 12,
+            "actived": true,
+            "stock": 72,
+            "description": "<p>Expedição ao Desconhecido é um livro fascinante sobre auto ajuda.</p>",
+            "images": [],
+            "category": {
+                "slug": "auto-ajuda",
+                "name": "Auto Ajuda"
+            }
+        },
+        {
+            "documentId": "16",
+            "productName": "O Poder do Hábito",
+            "slug": "o-poder-do-habito",
+            "price": 64.15,
+            "oldPrice": 146.56,
+            "installments": 12,
+            "actived": true,
+            "stock": 94,
+            "description": "<p>O Poder do Hábito é um livro fascinante sobre terror.</p>",
+            "images": [],
+            "category": {
+                "slug": "terror",
+                "name": "Terror"
+            }
+        },
+        {
+            "documentId": "17",
+            "productName": "Pesadelos em Série",
+            "slug": "pesadelos-em-serie",
+            "price": 51.55,
+            "oldPrice": 101.73,
+            "installments": 12,
+            "actived": true,
+            "stock": 20,
+            "description": "<p>Pesadelos em Série é um livro fascinante sobre aventura.</p>",
+            "images": [],
+            "category": {
+                "slug": "terror",
+                "name": "Terror"
+            }
+        },
+        {
+            "documentId": "18",
+            "productName": "Caminhos do Amor",
+            "slug": "caminhos-do-amor",
+            "price": 77.21,
+            "oldPrice": 130.51,
+            "installments": 12,
+            "actived": true,
+            "stock": 24,
+            "description": "<p>Caminhos do Amor é um livro fascinante sobre auto ajuda.</p>",
+            "images": [],
+            "category": {
+                "slug": "aventura",
+                "name": "Aventura"
+            }
+        },
+        {
+            "documentId": "19",
+            "productName": "O Enigma da Montanha",
+            "slug": "o-enigma-da-montanha",
+            "price": 45.23,
+            "oldPrice": 182.54,
+            "installments": 12,
+            "actived": true,
+            "stock": 56,
+            "description": "<p>O Enigma da Montanha é um livro fascinante sobre aventura.</p>",
+            "images": [],
+            "category": {
+                "slug": "aventura",
+                "name": "Aventura"
+            }
+        },
+        {
+            "documentId": "20",
+            "productName": "Confiança Inabalável",
+            "slug": "confianca-inabalavel",
+            "price": 64.72,
+            "oldPrice": 109.36,
+            "installments": 12,
+            "actived": true,
+            "stock": 82,
+            "description": "<p>Confiança Inabalável é um livro fascinante sobre auto ajuda.</p>",
+            "images": [],
+            "category": {
+                "slug": "romance",
+                "name": "Romance"
+            }
+        },
+        {
+            "documentId": "21",
+            "productName": "A Maldição do Faraó",
+            "slug": "a-maldicao-do-farao",
+            "price": 60.33,
+            "oldPrice": 135.85,
+            "installments": 12,
+            "actived": true,
+            "stock": 21,
+            "description": "<p>A Maldição do Faraó é um livro fascinante sobre romance.</p>",
+            "images": [],
+            "category": {
+                "slug": "terror",
+                "name": "Terror"
+            }
+        },
+        {
+            "documentId": "22",
+            "productName": "Amor e Revolução",
+            "slug": "amor-e-revolucao",
+            "price": 53.81,
+            "oldPrice": 104.65,
+            "installments": 12,
+            "actived": true,
+            "stock": 50,
+            "description": "<p>Amor e Revolução é um livro fascinante sobre aventura.</p>",
+            "images": [],
+            "category": {
+                "slug": "aventura",
+                "name": "Aventura"
+            }
+        },
+        {
+            "documentId": "23",
+            "productName": "Entre as Sombras",
+            "slug": "entre-as-sombras",
+            "price": 89.82,
+            "oldPrice": 134.83,
+            "installments": 12,
+            "actived": true,
+            "stock": 31,
+            "description": "<p>Entre as Sombras é um livro fascinante sobre terror.</p>",
+            "images": [],
+            "category": {
+                "slug": "auto-ajuda",
+                "name": "Auto Ajuda"
+            }
+        },
+        {
+            "documentId": "24",
+            "productName": "Aventuras na Selva",
+            "slug": "aventuras-na-selva",
+            "price": 37.13,
+            "oldPrice": 175.12,
+            "installments": 12,
+            "actived": true,
+            "stock": 96,
+            "description": "<p>Aventuras na Selva é um livro fascinante sobre romance.</p>",
+            "images": [],
+            "category": {
+                "slug": "aventura",
+                "name": "Aventura"
+            }
+        },
+        {
+            "documentId": "25",
+            "productName": "Riquezas da Mente",
+            "slug": "riquezas-da-mente",
+            "price": 95.64,
+            "oldPrice": 164.47,
+            "installments": 12,
+            "actived": true,
+            "stock": 36,
+            "description": "<p>Riquezas da Mente é um livro fascinante sobre auto ajuda.</p>",
+            "images": [],
+            "category": {
+                "slug": "romance",
+                "name": "Romance"
+            }
+        },
+        {
+            "documentId": "26",
+            "productName": "Noite dos Mortos",
+            "slug": "noite-dos-mortos",
+            "price": 72.0,
+            "oldPrice": 143.65,
+            "installments": 12,
+            "actived": true,
+            "stock": 20,
+            "description": "<p>Noite dos Mortos é um livro fascinante sobre auto ajuda.</p>",
+            "images": [],
+            "category": {
+                "slug": "auto-ajuda",
+                "name": "Auto Ajuda"
+            }
+        },
+        {
+            "documentId": "27",
+            "productName": "Promessas de Primavera",
+            "slug": "promessas-de-primavera",
+            "price": 63.19,
+            "oldPrice": 103.39,
+            "installments": 12,
+            "actived": true,
+            "stock": 30,
+            "description": "<p>Promessas de Primavera é um livro fascinante sobre romance.</p>",
+            "images": [],
+            "category": {
+                "slug": "terror",
+                "name": "Terror"
+            }
+        },
+        {
+            "documentId": "28",
+            "productName": "O Labirinto Perdido",
+            "slug": "o-labirinto-perdido",
+            "price": 45.64,
+            "oldPrice": 190.37,
+            "installments": 12,
+            "actived": true,
+            "stock": 54,
+            "description": "<p>O Labirinto Perdido é um livro fascinante sobre terror.</p>",
+            "images": [],
+            "category": {
+                "slug": "romance",
+                "name": "Romance"
+            }
+        },
+        {
+            "documentId": "29",
+            "productName": "A Arte da Felicidade",
+            "slug": "a-arte-da-felicidade",
+            "price": 64.32,
+            "oldPrice": 168.34,
+            "installments": 12,
+            "actived": true,
+            "stock": 12,
+            "description": "<p>A Arte da Felicidade é um livro fascinante sobre aventura.</p>",
+            "images": [],
+            "category": {
+                "slug": "terror",
+                "name": "Terror"
+            }
+        },
+        {
+            "documentId": "30",
+            "productName": "Visões de Outro Mundo",
+            "slug": "visoes-de-outro-mundo",
+            "price": 52.74,
+            "oldPrice": 177.68,
+            "installments": 12,
+            "actived": true,
+            "stock": 31,
+            "description": "<p>Visões de Outro Mundo é um livro fascinante sobre terror.</p>",
+            "images": [],
+            "category": {
+                "slug": "terror",
+                "name": "Terror"
+            }
+        }
+    ]
+}
