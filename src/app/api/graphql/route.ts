@@ -1,4 +1,5 @@
 import { ApolloServer } from "@apollo/server";
+import { NextRequest } from "next/server"; // ✅ Importamos NextRequest para corrigir a tipagem
 import { startServerAndCreateNextHandler } from "@as-integrations/next";
 import { gql } from "graphql-tag";
 import fs from "fs";
@@ -79,8 +80,13 @@ const resolvers = {
 
 // Criando servidor Apollo
 const server = new ApolloServer({ typeDefs, resolvers });
-
-// Criando handler para Next.js App Router
 const handler = startServerAndCreateNextHandler(server);
 
-export { handler as GET, handler as POST };
+// ✅ Criando as funções GET e POST explicitamente para corrigir o erro de tipagem
+export async function GET(req: NextRequest) {
+  return handler(req);
+}
+
+export async function POST(req: NextRequest) {
+  return handler(req);
+}

@@ -2,43 +2,20 @@ import { gql } from "@apollo/client";
 import client from "@/apollo/apolloClient";
 import { notFound } from "next/navigation";
 
-// Tipo para a categoria do produto
-interface Category {
-  slug: string;
-  name: string;
-}
-
-// Tipo para as imagens do produto (caso sejam adicionadas no futuro)
-interface ProductImage {
-  name: string;
-  alternativeText: string;
-  width: number;
-  height: number;
-  url: string;
-}
-
 // Tipo principal do Produto
 interface Product {
   documentId: string;
   productName: string;
   slug: string;
   price: number;
-  oldPrice?: number; // Pode ser opcional, já que nem todo produto pode ter um preço antigo
+  oldPrice?: number;
   installments: number;
   actived: boolean;
   stock: number;
-  description: string; // O conteúdo HTML vem como string
-  images: ProductImage[]; // Pode ser um array de imagens
-  category: Category;
+  description: string;
 }
 
-interface PageProps {
-  params: {
-    slug: string;
-  };
-}
-
-// Definir a query GraphQL para buscar um produto pelo slug
+// Query GraphQL para buscar **todos os produtos** (já que a API não suporta `where`)
 const GET_PRODUCTS = gql`
   query GetProducts {
     products {
@@ -66,50 +43,52 @@ const GET_PRODUCTS = gql`
   }
 `;
 
-
-
-
-// Função para buscar um produto pelo slug
-async function getProduct(slug: string) {
+// Função para buscar todos os produtos e filtrar pelo slug
+async function getProduct(slug: string): Promise<Product | null> {
   console.log("🔍 Buscando produto com slug:", slug);
+  
   try {
     const { data } = await client.query({
       query: GET_PRODUCTS, // Buscar todos os produtos
       fetchPolicy: "no-cache",
     });
 
-    console.log("📌 Todos os produtos recebidos:", data.products);
+    if (!data?.products) {
+      console.warn("⚠️ Nenhum produto retornado pela API.");
+      return null;
+    }
 
-    // Filtra o produto pelo slug correto
-    const product = data?.products?.find((p: Product) => p.slug === slug) || null;
+    const product = data.products.find((p: Product) => p.slug === slug) || null;
 
     if (!product) {
       console.warn(`⚠️ Produto não encontrado para o slug: ${slug}`);
     }
 
     return product;
-  } catch (error: unknown) {
-    if (error instanceof Error) {
-      console.error("❌ Erro ao buscar o produto:", error.message);
-    } else {
-      console.error("❌ Erro desconhecido ao buscar o produto:", error);
-    }
+  } catch (error) {
+    console.error("❌ Erro ao buscar o produto:", error);
     return null;
   }
 }
 
+// **🔹 Página do Produto (Server Component)**
+type Params = Promise<{ slug: string }>; // Garantimos que `params` seja tratado como uma Promise
 
+export default async function ProductPage({ params }: { params: Params }) {
+  const { slug } = await params; // Aguardamos `params` antes de usá-lo
 
-// **Página do Produto**
-export default async function ProductPage({ params }: PageProps) {
-  console.log("📌 Parâmetros recebidos:", params);
+  console.log("📌 Parâmetros recebidos:", slug);
 
-  if (!params || typeof params?.slug !== "string") {
+  if (!slug || typeof slug !== "string") {
     return notFound();
   }
 
-  console.log("🔍 Buscando produto pelo slug:", params.slug);
-  const product = await getProduct(params.slug); // Agora pegamos diretamente
+  return <ProductPageServer slug={slug} />;
+}
+
+// **🔹 Criamos um Server Component separado para buscar o produto**
+async function ProductPageServer({ slug }: { slug: string }) {
+  const product = await getProduct(slug);
 
   if (!product) {
     return notFound();
@@ -127,4 +106,3 @@ export default async function ProductPage({ params }: PageProps) {
     </div>
   );
 }
-

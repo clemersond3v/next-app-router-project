@@ -16,7 +16,7 @@ interface Product {
   };
 }
 
-// Query GraphQL para buscar os produtos
+// Query GraphQL para buscar todos os produtos
 const GET_PRODUCTS = gql`
   query GetProducts {
     products {
@@ -52,18 +52,29 @@ async function getProductsByCategory(categorySlug: string): Promise<Product[]> {
   }
 }
 
-// **Página de Categoria**
-export default async function CategoryPage({ params }: { params: { slug: string } }) {
-  if (!params.slug) {
+// **🔹 Página de Categoria (Server Component)**
+type Params = Promise<{ slug: string }>; // Garantimos que `params` seja tratado como uma Promise
+
+export default async function CategoryPage({ params }: { params: Params }) {
+  const { slug } = await params; // Aguardamos `params` antes de usá-lo
+
+  console.log("📌 Parâmetros recebidos:", slug);
+
+  if (!slug || typeof slug !== "string") {
     return notFound();
   }
 
-  const products = await getProductsByCategory(params.slug);
+  return <CategoryPageServer slug={slug} />;
+}
+
+// **🔹 Criamos um Server Component separado para buscar os produtos da categoria**
+async function CategoryPageServer({ slug }: { slug: string }) {
+  const products = await getProductsByCategory(slug);
 
   if (products.length === 0) {
     return (
       <div className="container mx-auto p-6">
-        <h1 className="text-3xl font-bold capitalize">{params.slug}</h1>
+        <h1 className="text-3xl font-bold capitalize">{slug}</h1>
         <p className="text-gray-500">Nenhum produto encontrado nesta categoria.</p>
       </div>
     );
