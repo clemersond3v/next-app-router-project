@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { FiHeart } from "react-icons/fi";
 import TopBar from './TopBar/TopBar';
 import styles from './Header.module.scss';
 import SearchBar from './SearchBar/SearchBar';
@@ -30,9 +29,7 @@ const Header: React.FC = () => {
 
                 <div className={styles["layout-header-container--actions"]}>
                     <div className={styles["layout-header-container--actions-wishlist"]}>
-                        {/* <Link href="/wishlist">
-                            <FiHeart size={25} color="#001e62" />
-                        </Link> */}
+
                     </div>
 
                     <div className={styles["layout-header-container--actions-notifications"]}>
