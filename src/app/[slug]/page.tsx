@@ -33,15 +33,18 @@ const GET_PRODUCTS = gql`
   }
 `;
 
-// Função para buscar os produtos de uma categoria específica
+// **🔹 Função para buscar produtos por categoria**
 async function getProductsByCategory(categorySlug: string): Promise<Product[]> {
+  console.log("🔍 Buscando produtos para a categoria:", categorySlug);
+
   try {
     const { data } = await client.query({
       query: GET_PRODUCTS,
       fetchPolicy: "no-cache",
     });
 
-    if (!data || !data.products) {
+    if (!data?.products) {
+      console.warn("⚠️ Nenhum produto retornado pela API.");
       return [];
     }
 
@@ -52,13 +55,13 @@ async function getProductsByCategory(categorySlug: string): Promise<Product[]> {
   }
 }
 
-// **🔹 Página de Categoria (Server Component)**
+// **🔹 Página de Departamento (Server Component)**
 type Params = Promise<{ slug: string }>; // Garantimos que `params` seja tratado como uma Promise
 
 export default async function CategoryPage({ params }: { params: Params }) {
-  const { slug } = await params; // Aguardamos `params` antes de usá-lo
+  const { slug } = await params; // ✅ Aguardamos `params` antes de usá-lo
 
-  console.log("📌 Parâmetros recebidos:", slug);
+  console.log("📌 Parâmetros recebidos (categoria):", slug);
 
   if (!slug || typeof slug !== "string") {
     return notFound();
