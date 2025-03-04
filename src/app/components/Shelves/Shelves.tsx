@@ -34,14 +34,6 @@ interface Product {
         name: string;
     }
 }
-  
-// interface ProductsQueryResult {
-//     products: Product[];
-// }
-
-// interface ProductListProps {
-//     products: Product[];
-// }
 
   
 const Shelves: React.FC = () => {

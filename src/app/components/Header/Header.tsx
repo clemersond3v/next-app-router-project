@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { FiHeart } from "react-icons/fi";
 import TopBar from './TopBar/TopBar';
 import styles from './Header.module.scss';
 import SearchBar from './SearchBar/SearchBar';
@@ -7,13 +6,12 @@ import MyAccount from './MyAccount/MyAccount';
 import Menu from './Menu/Menu';
 import Minicart from './Minicart/Minicart';
 import AlertNotifications from './AlertNotifications/AlertNotifications';
-import Submenu from './Submenu/Submenu';
 
 const Header: React.FC = () => {
     return(
         <header className={styles["layout-header"]}>
             <TopBar />
-            <Submenu />
+
             <div className={styles["layout-header-container"]}>
                 <div className={styles["layout-header-container--logo"]}>
                     <Link href={"/"}>
@@ -31,9 +29,7 @@ const Header: React.FC = () => {
 
                 <div className={styles["layout-header-container--actions"]}>
                     <div className={styles["layout-header-container--actions-wishlist"]}>
-                        <Link href="/wishlist">
-                            <FiHeart size={25} color="#001e62" />
-                        </Link>
+
                     </div>
 
                     <div className={styles["layout-header-container--actions-notifications"]}>

@@ -23,11 +23,11 @@ jobs:
         with:
           node-version: 18
 
-      # 3. Instalar dependências do sistema para o Chrome e o XVFB
+      # 3. Instalar dependências do sistema para o Chrome e o XVFB (🚀 REMOVIDO `libasound2`)
       - name: Install Chrome and XVFB
         run: |
           sudo apt-get update
-          sudo apt-get install -y google-chrome-stable xvfb libnss3 libatk1.0-0 libx11-xcb1 libxcomposite1 libxcursor1 libxdamage1 libxrandr2 libgbm-dev libasound2
+          sudo apt-get install -y google-chrome-stable xvfb libnss3 libatk1.0-0 libx11-xcb1 libxcomposite1 libxcursor1 libxdamage1 libxrandr2 libgbm-dev
 
       # 4. Instalar dependências do projeto
       - name: Install dependencies
@@ -54,12 +54,11 @@ jobs:
 
       # 9. Fazer upload do artefato
       - name: Upload Lighthouse Report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: lighthouse-report
           path: ./lighthouse-report.json
 
-      # 10. Verificar media dos scores do Lighthouse
+      # 10. Verificar média dos scores do Lighthouse
       - name: Run Lighthouse CI
         run: npx lhci autorun
-
