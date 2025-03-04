@@ -9,7 +9,7 @@ import styles from './TopBar.module.scss';
 const TopBar: React.FC = () => {
     return (
         <div className={styles["topBar"]}>
-            <ul className={styles["topBar--list"]}>
+            <div className={styles["topBar--list"]}>
                 <Swiper
                     modules={[Autoplay]}
                     loop={true}
@@ -22,22 +22,22 @@ const TopBar: React.FC = () => {
                     }}
                 >
                     <SwiperSlide>
-                        <li className={styles["topBar--list-item"]}>
+                        <div className={styles["topBar--list-item"]}>
                             <p>Melhores preços do Brasil</p>
-                        </li>
+                        </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <li className={styles["topBar--list-item"]}>
+                        <div className={styles["topBar--list-item"]}>
                             <p>Entrega em todo o território Brasileiro</p>
-                        </li>
+                        </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <li className={styles["topBar--list-item"]}>
+                        <div className={styles["topBar--list-item"]}>
                             <p>Frete Grátis em compras acima de R$899,90</p>
-                        </li>
+                        </div>
                     </SwiperSlide>
                 </Swiper>
-            </ul>
+            </div>
         </div>
     );
 }

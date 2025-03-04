@@ -43,7 +43,7 @@ const Shelves: React.FC = () => {
     if (error) return <p>Error loading products.</p>;
 
     return(
-        <ul className={style["shelf-item--container"]}>
+        <div className={style["shelf-item--container"]}>
             <Swiper
                 loop={true}
                 spaceBetween={-30}
@@ -57,18 +57,18 @@ const Shelves: React.FC = () => {
             >
                 {products.map((product: Product) => (
                     <SwiperSlide key={product.documentId}>
-                        <li id={product.documentId} className={style["shelf-item--container-card"]}>
+                        <div id={product.documentId} className={style["shelf-item--container-card"]}>
                             <div className={style["shelf-item"]}>
                                 <div className={style["shelf-item--images"]}>
-                                    <ul>
+                                    <div>
                                         {product.images.map((image: ImageProps) => (
-                                            <li key={image.name}>
+                                            <div key={image.name}>
                                                 <Link href={`/${product.slug}/p`}>
                                                     <Image  src={image.url} alt={image.name} width={245} height={245} />
                                                 </Link>                                                
-                                            </li>                            
+                                            </div>                            
                                         ))}
-                                    </ul>                        
+                                    </div>                        
                                 </div>
 
                                 <div className={style["shelf-item--content"]}>
@@ -89,11 +89,11 @@ const Shelves: React.FC = () => {
                                     <Link className={style["shelf-item--cta-btn"]} href={`/${product.slug}/p`}>Comprar</Link>
                                 </div>  
                             </div>                       
-                        </li>
+                        </div>
                     </SwiperSlide>
                 ))}                
             </Swiper>
-        </ul>
+        </div>
     );
 }
 
