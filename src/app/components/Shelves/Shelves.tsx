@@ -46,7 +46,7 @@ interface Product {
   
 const Shelves: React.FC = () => {
     const { products, loading, error } = useProducts();
-    console.log("products: ", products);
+    // console.log("products: ", products);
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error loading products.</p>;
 

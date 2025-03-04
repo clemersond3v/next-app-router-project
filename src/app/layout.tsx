@@ -7,7 +7,7 @@ import Footer from "./components/Footer/Footer";
 import { Suspense } from "react";
 import Loading from "./loading";
 import { ApolloProvider } from '@apollo/client';
-import apolloClient from '../apollo/apolloClient';
+import apolloClient from '@/apollo/apolloClient';
 
 // export const metadata: Metadata = {
 //   title: "Create Next App - Clemerson Costa",
