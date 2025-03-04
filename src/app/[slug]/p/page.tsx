@@ -2,21 +2,15 @@ import { gql } from "@apollo/client";
 import client from "@/apollo/apolloClient";
 import { notFound } from "next/navigation";
 
-interface Product {
-    documentId: string;
-    productName: string;
+interface PageProps {
+  params: {
     slug: string;
-    price: number;
-    oldPrice?: number;
-    category: {
-      slug: string;
-      name: string;
-    };
+  };
 }
 
 // Definir a query GraphQL para buscar um produto pelo slug
-const GET_PRODUCT_BY_SLUG = gql`
-  query GetProductBySlug {
+const GET_PRODUCTS = gql`
+  query GetProducts {
     products {
       documentId
       productName
@@ -42,32 +36,46 @@ const GET_PRODUCT_BY_SLUG = gql`
   }
 `;
 
+
+
+
 // Função para buscar um produto pelo slug
 async function getProduct(slug: string) {
+  console.log("🔍 Buscando produto com slug:", slug);
   try {
     const { data } = await client.query({
-      query: GET_PRODUCT_BY_SLUG,
+      query: GET_PRODUCTS, // Buscar todos os produtos
       fetchPolicy: "no-cache",
     });
 
-    if (!data || !data.products) {
-      return null;
+    console.log("📌 Todos os produtos recebidos:", data.products);
+
+    // Filtra o produto pelo slug correto
+    const product = data?.products?.find((p: any) => p.slug === slug) || null;
+
+    if (!product) {
+      console.warn(`⚠️ Produto não encontrado para o slug: ${slug}`);
     }
 
-    return data.products.find((p: Product) => p.slug === slug) || null;
-  } catch (error) {
-    console.error("❌ Erro ao buscar o produto:", error);
+    return product;
+  } catch (error: any) {
+    console.error("❌ Erro ao buscar o produto:", error.message || error);
     return null;
   }
 }
 
+
+
 // **Página do Produto**
-export default async function ProductPage({ params }: { params: { slug: string } }) {
-  if (!params.slug) {
+export default async function ProductPage({ params }: PageProps) {
+  console.log("📌 Parâmetros recebidos:", params);
+
+  if (!params || typeof params?.slug !== "string") {
     return notFound();
   }
 
-  const product = await getProduct(params.slug);
+  console.log("🔍 Buscando produto pelo slug:", params.slug);
+  const product = await getProduct(params.slug); // Agora pegamos diretamente
 
   if (!product) {
     return notFound();
@@ -85,3 +93,4 @@ export default async function ProductPage({ params }: { params: { slug: string }
     </div>
   );
 }
+
