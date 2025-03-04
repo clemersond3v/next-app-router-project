@@ -2,6 +2,36 @@ import { gql } from "@apollo/client";
 import client from "@/apollo/apolloClient";
 import { notFound } from "next/navigation";
 
+// Tipo para a categoria do produto
+interface Category {
+  slug: string;
+  name: string;
+}
+
+// Tipo para as imagens do produto (caso sejam adicionadas no futuro)
+interface ProductImage {
+  name: string;
+  alternativeText: string;
+  width: number;
+  height: number;
+  url: string;
+}
+
+// Tipo principal do Produto
+interface Product {
+  documentId: string;
+  productName: string;
+  slug: string;
+  price: number;
+  oldPrice?: number; // Pode ser opcional, já que nem todo produto pode ter um preço antigo
+  installments: number;
+  actived: boolean;
+  stock: number;
+  description: string; // O conteúdo HTML vem como string
+  images: ProductImage[]; // Pode ser um array de imagens
+  category: Category;
+}
+
 interface PageProps {
   params: {
     slug: string;
@@ -51,7 +81,7 @@ async function getProduct(slug: string) {
     console.log("📌 Todos os produtos recebidos:", data.products);
 
     // Filtra o produto pelo slug correto
-    const product = data?.products?.find((p: any) => p.slug === slug) || null;
+    const product = data?.products?.find((p: Product) => p.slug === slug) || null;
 
     if (!product) {
       console.warn(`⚠️ Produto não encontrado para o slug: ${slug}`);
