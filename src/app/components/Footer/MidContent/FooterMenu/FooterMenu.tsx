@@ -6,21 +6,21 @@ const FooterMenu: React.FC = () => {
         <div className={styles["footer-menu--container"]}>            
             <div className={styles["categories-col"]}>
                 <div className={styles["categories"]}>
-                    <h3 className={styles["footer-menu--title"]}>Masculino</h3>
-                    <Link className={styles["footer-menu--link"]} href="/calcados?filtro_39=Masculino">Calçados</Link>
-                    <Link className={styles["footer-menu--link"]} href="/Vestuario?filtro_39=Masculino">Vestuários</Link>
-                    <Link className={styles["footer-menu--link"]} href="/acessorios">Acessórios</Link>
-                    <Link className={styles["footer-menu--link"]} href="/lista/todos-produtos?filtro_39=Masculino">Ver tudo</Link>
+                    <h3 className={styles["footer-menu--title"]}>Categories</h3>
+                    <Link className={styles["footer-menu--link"]} href="/auto-ajuda">Auto Ajuda</Link>
+                    <Link className={styles["footer-menu--link"]} href="/aventura">Aventura</Link>
+                    <Link className={styles["footer-menu--link"]} href="/romance">Romance</Link>
+                    <Link className={styles["footer-menu--link"]} href="/terror">Terror</Link>
                 </div>
-                <div className={styles["categories"]}>
+                {/* <div className={styles["categories"]}>
                     <h3 className={styles["footer-menu--title"]}>Feminino</h3>
                     <Link className={styles["footer-menu--link"]} href="/calcados?filtro_39=Feminino">Calçados</Link>
                     <Link className={styles["footer-menu--link"]} href="/Vestuario?filtro_39=Feminino">Vestuários</Link>
                     <Link className={styles["footer-menu--link"]} href="/acessorios">Acessórios</Link>
                     <Link className={styles["footer-menu--link"]} href="/lista/todos-produtos?filtro_39=Feminino">Ver tudo</Link>
-                </div>
+                </div> */}
             </div>
-            <div className={styles["categories-col"]}>
+            {/* <div className={styles["categories-col"]}>
                 <div className={styles["categories esportes closed"]}>
                     <h3 className={styles["footer-menu--title"]}>Esportes</h3>
                     <Link className={styles["footer-menu--link"]} href="/lista/todos-produtos?filtro_40=Academia">Academia</Link>
@@ -43,7 +43,7 @@ const FooterMenu: React.FC = () => {
                     <Link href="/asics-back" className={styles["footer-menu--link--title"]}>Asics BACK</Link>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 }
