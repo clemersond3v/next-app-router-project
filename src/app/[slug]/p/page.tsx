@@ -88,8 +88,12 @@ async function getProduct(slug: string) {
     }
 
     return product;
-  } catch (error: any) {
-    console.error("❌ Erro ao buscar o produto:", error.message || error);
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      console.error("❌ Erro ao buscar o produto:", error.message);
+    } else {
+      console.error("❌ Erro desconhecido ao buscar o produto:", error);
+    }
     return null;
   }
 }
