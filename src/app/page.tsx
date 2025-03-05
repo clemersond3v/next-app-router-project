@@ -61,7 +61,7 @@ export default function Home() {
                   srcSet="/BannersResolutionX-Ecomm-v2-mobile.webp" 
                 />
 
-                <Image src='/banner-superblast2-nuevoscolores.webp' alt="banner-superblast2-nuevoscolores" width={1920} height={720} />
+                <Image src='/banner-superblast2-nuevoscolores.webp' alt="banner-superblast2-nuevoscolores" width={1920} height={720} loading="lazy" />
               </picture>
             </Link>
           </SwiperSlide>

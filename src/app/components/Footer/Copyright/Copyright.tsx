@@ -26,6 +26,7 @@ const Copyright: React.FC = () => {
             width={70}
             height={38}
             className={styles["footer-copyright--policy-group__powered-by__image"]}
+            loading="lazy"
           />
         </div>
       </div>

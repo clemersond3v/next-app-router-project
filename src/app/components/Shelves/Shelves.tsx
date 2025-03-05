@@ -70,7 +70,7 @@ const Shelves: React.FC = () => {
                                 <div className={style["shelf-item--images"]}>
                                     {product.images.map((image: ImageProps) => (
                                         <Link key={image.name} href={`/${product.slug}/p`}>
-                                            <Image src={image.url} alt={image.name} width={245} height={245} />
+                                            <Image src={image.url} alt={image.name} width={245} height={245} loading="lazy" />
                                         </Link>
                                     ))}
                                 </div>
