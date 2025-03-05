@@ -10,12 +10,22 @@
             max-width: 1440px;
             margin: 0 auto;
             padding: 35px 50px;
-            gap: 120px;        
+            gap: 120px;  
+            
+            @media(max-width: 1024px) {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
         }
          
 
         &-menu {
             display: flex;
+
+            @media(max-width: 1024px) {
+                justify-content: center;
+            }
         }
     }
 }

@@ -12,6 +12,15 @@
     justify-content: center;
     gap: 30px;
 
+    @media(max-width: 1024px) {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        text-align: center;
+        gap: 0px;
+        padding: 20px 20px;
+    }
+
     &-content {
         &--title {
             margin: 1rem 0;

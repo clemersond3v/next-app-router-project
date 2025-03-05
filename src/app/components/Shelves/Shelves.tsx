@@ -38,22 +38,26 @@ interface Product {
   
 const Shelves: React.FC = () => {
     const { products, loading, error } = useProducts();
-    // console.log("products: ", products);
+
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error loading products.</p>;
+
+    const isMobile = window.innerWidth <= 768 ? true : false;
+    
 
     return(
         <div className={style["shelf-item--container"]}>
             <Swiper
                 loop={true}
-                spaceBetween={-30}
-                slidesPerView={4}
+                spaceBetween={isMobile ? 30 : 0}
+                centeredSlides={isMobile ? true : false}
+                slidesPerView={isMobile ? 2 : 4}
                 speed={700}
                 pagination={{
                     clickable: true,
                 }}
                 navigation={true}
-                modules={[Pagination, Navigation]}
+                modules={[Pagination, Navigation]}                
             >
                 {products.map((product: Product) => (
                     <SwiperSlide key={product.documentId}>
