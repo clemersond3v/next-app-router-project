@@ -1,0 +1,24 @@
+# 📌 Permitir todos os bots rastrearem o site
+User-agent: *
+Disallow:
+
+# 📌 Bloquear páginas irrelevantes para indexação
+Disallow: /api/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /private/
+Disallow: /login/
+Disallow: /register/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /thank-you/
+Disallow: /search?q=
+
+# 📌 Permitir Googlebot acessar arquivos críticos
+User-agent: Googlebot
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+# 📌 Definir crawl delay (tempo entre acessos do bot para evitar sobrecarga no servidor)
+Crawl-delay: 10
