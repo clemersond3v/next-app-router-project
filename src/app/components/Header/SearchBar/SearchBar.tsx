@@ -5,7 +5,7 @@ const SearchBar: React.FC = () => {
     return (
         <div className={styles["searchBar"]}>
             <input type="text" placeholder="Buscar em ASICS.com.br" className={styles["searchBar--input"]} />
-            <button className={styles["searchBar--button"]}>
+            <button className={styles["searchBar--button"]} name='Botão de pesquisar' aria-label='Botão de pesquisar'>
                 <IoSearchOutline size={25} color="#001e62" />
             </button>
         </div>

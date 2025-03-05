@@ -1,6 +1,6 @@
 import { gql } from "@apollo/client";
 import client from "@/apollo/apolloClient";
-import { notFound } from "next/navigation";
+import notFound from "@/app/not-found";
 
 // Tipo principal do Produto
 interface Product {
