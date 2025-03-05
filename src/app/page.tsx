@@ -3,14 +3,18 @@
 
 import Image from "next/image";
 import styles from './Home.module.scss';
-
+import dynamic from 'next/dynamic';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/autoplay'; // Importe o CSS do autoplay
 import 'swiper/css/navigation';
 import { Autoplay, Navigation } from 'swiper/modules';
 import Link from "next/link";
-import Shelves from "./components/Shelves/Shelves";
+
+const Shelves = dynamic(() => import('./components/Shelves/Shelves'), {
+  ssr: false,
+  loading: () => <p>Carregando prateleira...</p>,
+});
 
 export default function Home() {
 
@@ -57,7 +61,7 @@ export default function Home() {
                   srcSet="/BannersResolutionX-Ecomm-v2-mobile.webp" 
                 />
 
-                <Image src='/banner-superblast2-nuevoscolores.webp' alt="banner-superblast2-nuevoscolores" width={1920} height={720} />
+                <Image src='/banner-superblast2-nuevoscolores.webp' alt="banner-superblast2-nuevoscolores" width={1920} height={720} loading="lazy" />
               </picture>
             </Link>
           </SwiperSlide>

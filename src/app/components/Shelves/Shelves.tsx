@@ -1,5 +1,4 @@
-
-'use client'
+'use client';
 
 import Image from "next/image";
 import style from './Shelves.module.scss';
@@ -10,6 +9,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Pagination, Navigation } from 'swiper/modules';
+import { useEffect, useState } from "react";
 
 interface ImageProps {
     name: string;
@@ -18,7 +18,7 @@ interface ImageProps {
     height: number;
     url: string;
 }
-  
+
 interface Product {
     documentId: string;
     productName: string;
@@ -35,51 +35,50 @@ interface Product {
     }
 }
 
-  
 const Shelves: React.FC = () => {
     const { products, loading, error } = useProducts();
+    const [isMobile, setIsMobile] = useState(false);
 
-    if (loading) return <p>Loading...</p>;
-    if (error) return <p>Error loading products.</p>;
+    // Verifica se o usuário está em um dispositivo móvel
+    useEffect(() => {
+        const checkIsMobile = () => setIsMobile(window.innerWidth <= 768);
+        checkIsMobile();
+        window.addEventListener("resize", checkIsMobile);
+        return () => window.removeEventListener("resize", checkIsMobile);
+    }, []);
 
-    const isMobile = window.innerWidth <= 768 ? true : false;
-    
+    if (loading) return <p>Carregando prateleira...</p>;
+    if (error) return <p>Erro ao carregar produtos.</p>;
+    if (!products.length) return <p>Nenhum produto disponível.</p>;
 
-    return(
+    return (
         <div className={style["shelf-item--container"]}>
             <Swiper
                 loop={true}
                 spaceBetween={isMobile ? 30 : 0}
-                centeredSlides={isMobile ? true : false}
+                centeredSlides={isMobile}
                 slidesPerView={isMobile ? 2 : 4}
                 speed={700}
-                pagination={{
-                    clickable: true,
-                }}
+                pagination={{ clickable: true }}
                 navigation={true}
-                modules={[Pagination, Navigation]}                
+                modules={[Pagination, Navigation]}
             >
                 {products.map((product: Product) => (
                     <SwiperSlide key={product.documentId}>
                         <div id={product.documentId} className={style["shelf-item--container-card"]}>
                             <div className={style["shelf-item"]}>
                                 <div className={style["shelf-item--images"]}>
-                                    <div>
-                                        {product.images.map((image: ImageProps) => (
-                                            <div key={image.name}>
-                                                <Link href={`/${product.slug}/p`}>
-                                                    <Image  src={image.url} alt={image.name} width={245} height={245} />
-                                                </Link>                                                
-                                            </div>                            
-                                        ))}
-                                    </div>                        
+                                    {product.images.map((image: ImageProps) => (
+                                        <Link key={image.name} href={`/${product.slug}/p`}>
+                                            <Image src={image.url} alt={image.name} width={245} height={245} loading="lazy" />
+                                        </Link>
+                                    ))}
                                 </div>
 
                                 <div className={style["shelf-item--content"]}>
                                     <Link href={`/${product.slug}/p`}>
                                         <h2 className={style["shelf-item--productName"]}>{product.productName}</h2>
                                     </Link> 
-                                    
                                     <p className={style["shelf-item--productCategory"]}>{product.category.name}</p>
 
                                     <div className={style["shelf-item--price"]}>
