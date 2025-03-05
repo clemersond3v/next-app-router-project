@@ -1,36 +1,109 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next APP Router Project
 
-## Getting Started
+## 📌 Sobre o Projeto
 
-First, run the development server:
+Esse projeto está sendo desenvolvido a fim de apoiar o meu estudo contínuo em engenharia de software e tecnologias front-end. O projeto consiste em uma loja (e-commerce).
+
+## 🚀 Tecnologias Utilizadas
+
+Este projeto foi desenvolvido utilizando as seguintes tecnologias:
+
+- **Next.js App Router** (14+) - Framework para aplicações React
+- **TypeScript** - Tipagem estática para maior segurança no código
+- **Sass (SCSS)** - Estilização modularizada
+- **JSON** - Utilizado para construir mock de dados
+- **GraphQL** - Linguagem de consulta para APIs que permite buscar e manipular dados de forma eficiente e flexível
+- **Swiper.js** - Carrosséis responsivos e otimizados
+- **Lighthouse** - Monitoramento das pontuações em performance, acessibilidade e SEO
+- **Vercel** - Hospedagem e deploy contínuo - Rotinas de CI/CD
+
+## 📂 Estrutura do Projeto
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+├── .github
+├── public/                # Arquivos estáticos
+├── src/
+|   ├── apollo/            # Configurações do ApolloClient
+|   ├──app
+|   |  ├── [slug]/         # Páginas dinâmicas (Departamento e Produto)
+|   |  ├── about/          # Página de "Sobre"
+│   |  ├── api/            # Configuração da API GraphQL
+|   |  ├── components/     # Componentes reutilizáveis
+|   |  ├── fonts/          # Configurações de fontes
+|   |  ├── error.tsx       # Template de error
+|   |  ├── globals.css     # Estilizações Globais
+|   |  ├── layout.tsx       
+|   |  ├── loading.tsx     # Template de loading
+|   |  ├── not-found.tsx   # Template de erro 404
+|   |  ├── page.tsx         
+│   ├── data/              # Mock de dados em JSON
+|   ├── hooks/             # Hooks customizados
+└── next.config.ts         # Configuração do Next.js
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Configuração e Instalação
 
-## Learn More
+### **1️⃣ Pré-requisitos**
 
-To learn more about Next.js, take a look at the following resources:
+Certifique-se de ter instalado:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Node.js** (versão 16+ recomendada)
+- **Yarn** ou **npm**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### **2️⃣ Instalação das dependências**
 
-## Deploy on Vercel
+```bash
+yarn install  # ou npm install
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### **3️⃣ Configuração das variáveis de ambiente**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Crie um arquivo `.env.local` (opcional) e adicione as variáveis necessárias:
+
+```env
+NEXT_PUBLIC_API_URL=https://api.example.com
+NEXT_PUBLIC_DB_ACCOUNT=exemple
+```
+
+### **4️⃣ Rodando o projeto**
+
+```bash
+yarn dev  # ou npm run dev
+```
+
+O projeto estará disponível em `http://localhost:3000`
+
+## 🚀 Deploy e Hospedagem
+
+Este projeto está hospedado na **Vercel**, e todo push para a branch `main` aciona um deploy automático.
+
+Cada push em uma branch também dispara o monitoramento do lighthouse, que ao final da rotina, disponibiliza no painel da Vercel
+um arquivo JSON com os dados da análise de performance, acessibilidade, Práticas recomendadas e SEO. 
+
+📌 **Build para produção:**
+
+```bash
+yarn build  # ou npm run build
+```
+
+📌 **Rodar em produção localmente:**
+
+```bash
+yarn start  # ou npm run start
+```
+
+## ✅ Otimizações Implementadas
+
+- **Code Splitting** com `next/dynamic`
+- **Lazy Loading** para imagens fora da tela
+- **Compactação de texto** com Gzip/Brotli
+- **Melhoria de tempo de resposta** via Webpack `splitChunks`
+- **Otimização de imagens** (`.webp` e `.avif` quando disponível)
+- **Melhoria de SEO** com metatags e otimização de performance
+
+---
+
+🚀 **Desenvolvido por Clemerson Costa**
+
