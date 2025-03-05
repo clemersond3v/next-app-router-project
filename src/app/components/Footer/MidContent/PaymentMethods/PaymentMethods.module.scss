@@ -1,5 +1,10 @@
 .payment-methods {
     &__list {
         display: flex;
+        margin-top: 10px;
+
+        @media(max-width: 1024px) {
+            justify-content: center;
+        }
     }
 }

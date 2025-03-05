@@ -5,6 +5,10 @@
     margin: 15px auto 0;
     padding: 0 0 15px;
 
+    @media(max-width: 1024px) {
+        margin: 15px 10px 0;
+    }
+
     &--item {
         a {
             padding: 0 0 19px;

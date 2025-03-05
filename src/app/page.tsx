@@ -32,12 +32,33 @@ export default function Home() {
         >
           <SwiperSlide>
             <Link href="/" className={styles["home-page--mainBanners-item"]}>
-              <Image src='/banner-lanzamiento-noosatri16.webp' alt="banner-lanzamiento-noosatri16" width={1920} height={720} />
+              <picture>            
+                <source 
+                  media="(max-width: 768px)" 
+                  srcSet="/banner-ecomm-packluxe-mobile.webp" 
+                />
+
+                <Image 
+                  src="/banner-lanzamiento-noosatri16.webp" 
+                  alt="Banner Lanzamiento Noosatri 16" 
+                  width={1920} 
+                  height={720} 
+                  priority 
+                />
+              </picture>
             </Link>
           </SwiperSlide>
+          
           <SwiperSlide>
             <Link href="/" className={styles["home-page--mainBanners-item"]}>
-            <Image src='/banner-superblast2-nuevoscolores.webp' alt="banner-superblast2-nuevoscolores" width={1920} height={720} />
+              <picture>
+                <source 
+                  media="(max-width: 768px)" 
+                  srcSet="/BannersResolutionX-Ecomm-v2-mobile.webp" 
+                />
+
+                <Image src='/banner-superblast2-nuevoscolores.webp' alt="banner-superblast2-nuevoscolores" width={1920} height={720} />
+              </picture>
             </Link>
           </SwiperSlide>
         </Swiper>

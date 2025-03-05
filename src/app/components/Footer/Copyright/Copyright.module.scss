@@ -6,5 +6,12 @@
         display: flex;
         align-items: center;
         justify-content: center;
+
+        @media(max-width: 1024px) {
+            flex-direction: column;
+            text-align: center;
+            padding: 20px 20px;
+            font-size: 12px;
+        }
     }
 }
