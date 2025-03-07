@@ -1,15 +1,29 @@
+"use client"
+
 import { PiUserCircleLight } from "react-icons/pi";
 import { MdKeyboardArrowRight } from "react-icons/md";
-import styles from './MyAccount.module.scss';
+import { useEffect, useState } from "react";
 
 const MyAccount: React.FC = () => {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkIsMobile = () => setIsMobile(window.innerWidth <= 1440);
+        checkIsMobile();
+        window.addEventListener("resize", checkIsMobile);
+        return () => window.removeEventListener("resize", checkIsMobile);
+    }, []);
+    
     return (
-        <button className={styles["myAccountBtn"]}>
+        <button className="flex items-center gap-1 xl:border-[1px] xl:border-bglight500 xl:rounded-md xl:p-1">
             <PiUserCircleLight size={30} color="#001e62" />
 
-            <p>Entrar</p>
-
-            <MdKeyboardArrowRight className={styles["icon__arrow-header"]} size={25} color="#B7B9DE" />
+            {!isMobile && (
+                <>
+                    <p className="text-sm">Entrar</p>
+                    <MdKeyboardArrowRight className="" size={25} color="#B7B9DE" />
+                </>                
+            )}            
         </button>
     );
 }

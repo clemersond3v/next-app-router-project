@@ -1,12 +1,10 @@
 import { BsFillCartFill } from "react-icons/bs";
-import styles from './Minicart.module.scss';
 
 const Minicart: React.FC = () => {
     return (
-        <div className={styles["minicartBtn"]}>
+        <button name="Botão do carrinho" aria-label="Botão do carrinho">
             <BsFillCartFill size={25} color="#001e62" />
-        </div>
-        
+        </button>
     );
 }
 

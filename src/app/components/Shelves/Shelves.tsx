@@ -1,7 +1,4 @@
-'use client';
-
 import Image from "next/image";
-import style from './Shelves.module.scss';
 import { useProducts } from '../../../hooks/useProducts';
 import Link from "next/link";
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -9,7 +6,6 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Pagination, Navigation } from 'swiper/modules';
-import { useEffect, useState } from "react";
 
 interface ImageProps {
     name: string;
@@ -37,37 +33,39 @@ interface Product {
 
 const Shelves: React.FC = () => {
     const { products, loading, error } = useProducts();
-    const [isMobile, setIsMobile] = useState(false);
 
-    // Verifica se o usuário está em um dispositivo móvel
-    useEffect(() => {
-        const checkIsMobile = () => setIsMobile(window.innerWidth <= 768);
-        checkIsMobile();
-        window.addEventListener("resize", checkIsMobile);
-        return () => window.removeEventListener("resize", checkIsMobile);
-    }, []);
+    const loadingBook = "/book-loading.gif";
 
-    if (loading) return <p>Carregando prateleira...</p>;
+    if (loading) return <div className="max-w-container mx-auto p-4 flex items-center justify-center"><Image src={loadingBook} alt="carregando prateleiras" width={150} height={150} /></div>;
     if (error) return <p>Erro ao carregar produtos.</p>;
     if (!products.length) return <p>Nenhum produto disponível.</p>;
 
+    const limitedProducts = products.slice(0, 15);
+
     return (
-        <div className={style["shelf-item--container"]}>
+        <div className="max-w-[1200px] w-[95%] mt-10 mx-auto xl:w-full xl:my-24">
             <Swiper
                 loop={true}
-                spaceBetween={isMobile ? 30 : 0}
-                centeredSlides={isMobile}
-                slidesPerView={isMobile ? 2 : 4}
+                spaceBetween={30}
+                centeredSlides={true}
+                slidesPerView={2}
                 speed={700}
                 pagination={{ clickable: true }}
                 navigation={true}
                 modules={[Pagination, Navigation]}
+                breakpoints={{
+                    1440: {
+                        spaceBetween: 0,
+                        centeredSlides: false,
+                        slidesPerView: 4
+                    }
+                }}
             >
-                {products.map((product: Product) => (
+                {limitedProducts.map((product: Product) => (
                     <SwiperSlide key={product.documentId}>
-                        <div id={product.documentId} className={style["shelf-item--container-card"]}>
-                            <div className={style["shelf-item"]}>
-                                <div className={style["shelf-item--images"]}>
+                        <div id={product.documentId} className="w-full">
+                            <div className="max-w-[245px] w-full rounded-lg mt-3 mx-auto mb-10 pb-3 shadow-[0_0_5px_2px_#eee]">
+                                <div>
                                     {product.images.map((image: ImageProps) => (
                                         <Link key={image.name} href={`/${product.slug}/p`}>
                                             <Image src={image.url} alt={image.name} width={245} height={245} loading="lazy" />
@@ -75,26 +73,26 @@ const Shelves: React.FC = () => {
                                     ))}
                                 </div>
 
-                                <div className={style["shelf-item--content"]}>
+                                <div className="p-[10px]">
                                     <Link href={`/${product.slug}/p`}>
-                                        <h2 className={style["shelf-item--productName"]}>{product.productName}</h2>
+                                        <h2 className="text-sm mb-[5px] min-h-11">{product.productName}</h2>
                                     </Link> 
-                                    <p className={style["shelf-item--productCategory"]}>{product.category.name}</p>
+                                    <p className="text-sm bg-[#e4e5f399] rounded-[4px] w-fit py-1 px-2 mb-[5px]">{product.category.name}</p>
 
-                                    <div className={style["shelf-item--price"]}>
-                                        <p className={style["shelf-item--price-old"]}>{product.oldPrice.toLocaleString("pt-BR", { style: 'currency', currency: 'BRL' })}</p>
-                                        <p className={style["shelf-item--price-new"]}>{product.price.toLocaleString("pt-BR", { style: 'currency', currency: 'BRL' })}</p>   
+                                    <div className="flex justify-start items-center mb-[5px] gap-2">
+                                        <p className="text-xs line-through">{product.oldPrice.toLocaleString("pt-BR", { style: 'currency', currency: 'BRL' })}</p>
+                                        <p className="text-sm">{product.price.toLocaleString("pt-BR", { style: 'currency', currency: 'BRL' })}</p>   
                                     </div>
                                                     
-                                    <p className={style["shelf-item--stock"]}>{product.stock} unid. {product.stock > 1 ? "disponíveis" : "disponível"}</p>
+                                    <p className="text-xs mb-[5px]">{product.stock} unid. {product.stock > 1 ? "disponíveis" : "disponível"}</p>
                                 </div>   
-                                <div className={style["shelf-item--cta"]}>
-                                    <Link className={style["shelf-item--cta-btn"]} href={`/${product.slug}/p`}>Comprar</Link>
+                                <div className="px-2">
+                                    <Link className="w-full h-10 bg-[#e4e5f399] rounded-lg flex justify-center items-center text-sm font-bold" href={`/${product.slug}/p`}>Comprar</Link>
                                 </div>  
                             </div>                       
                         </div>
                     </SwiperSlide>
-                ))}                
+                ))}            
             </Swiper>
         </div>
     );

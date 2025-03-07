@@ -1,20 +1,19 @@
 import Link from "next/link";
-import styles from './Menu.module.scss';
 
 const Menu: React.FC = () => {
     return (
-        <ul className={styles['menu-departments']}>
-            <li className={styles['menu-departments--item']}>
-                <Link href={"/auto-ajuda"}>Auto Ajuda</Link>
+        <ul className="max-w-container flex items-center justify-center h-12 ms:gap-4 mx-4 xs:gap-2 xl:mx-auto">
+            <li className="font-medium">
+                <Link className="xl:hover:underline" href={"/auto-ajuda"}>Auto Ajuda</Link>
             </li>
-            <li className={styles['menu-departments--item']}>
-                <Link href={"/aventura"}>Aventura</Link>
+            <li className="font-medium">
+                <Link className="xl:hover:underline" href={"/aventura"}>Aventura</Link>
             </li>
-            <li className={styles['menu-departments--item']}>
-                <Link href={"/romance"}>Romance</Link>
+            <li className="font-medium">
+                <Link className="xl:hover:underline" href={"/romance"}>Romance</Link>
             </li>
-            <li className={styles['menu-departments--item']}>
-                <Link href={"/terror"}>Terror</Link>
+            <li className="font-medium">
+                <Link className="xl:hover:underline" href={"/terror"}>Terror</Link>
             </li>
         </ul>
     );
