@@ -10,12 +10,13 @@ Este projeto foi desenvolvido utilizando as seguintes tecnologias:
 
 - **Next.js App Router** (14+) - Framework para aplicações React
 - **TypeScript** - Tipagem estática para maior segurança no código
-- **Sass (SCSS)** - Estilização modularizada
-- **JSON** - Utilizado para construir mock de dados
-- **GraphQL** - Linguagem de consulta para APIs que permite buscar e manipular dados de forma eficiente e flexível
+- **Tailwind CSS** - Abordagem utility-first, produtividade e performance
+- **JSON** - Utilizado nesse projeto para construir mock de dados
+- **GraphQL** - Utilizado nesse projeto para buscar e manipular dados de forma eficiente e flexível
 - **Swiper.js** - Carrosséis responsivos e otimizados
 - **Lighthouse** - Monitoramento das pontuações em performance, acessibilidade e SEO
-- **Vercel** - Hospedagem e deploy contínuo - Rotinas de CI/CD
+- **Vercel** - Hospedagem e deploy contínuo - integração com Rotinas de CI/CD
+- **Mobile-first** - Visando alcançar uma maior acessibilidade e responsividade
 
 ## 📂 Estrutura do Projeto
 
