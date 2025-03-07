@@ -4,12 +4,11 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/autoplay'; // Importe o CSS do autoplay
 import { Autoplay } from 'swiper/modules';
-import styles from './TopBar.module.scss';
 
 const TopBar: React.FC = () => {
     return (
-        <div className={styles["topBar"]}>
-            <div className={styles["topBar--list"]}>
+        <div className="bg-bglight500 overflow-hidden">
+            <div>
                 <Swiper
                     modules={[Autoplay]}
                     loop={true}
@@ -22,17 +21,17 @@ const TopBar: React.FC = () => {
                     }}
                 >
                     <SwiperSlide>
-                        <div className={styles["topBar--list-item"]}>
+                        <div className="font-bold text-base leading-tight h-9 text-primary cursor-pointer py-2 text-center">
                             <p>Melhores preços do Brasil</p>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div className={styles["topBar--list-item"]}>
+                        <div className="font-bold text-base leading-tight h-9 text-primary cursor-pointer py-2 text-center">
                             <p>Entrega em todo o território Brasileiro</p>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div className={styles["topBar--list-item"]}>
+                        <div className="font-bold text-base leading-tight h-9 text-primary cursor-pointer py-2 text-center">
                             <p>Frete Grátis em compras acima de R$899,90</p>
                         </div>
                     </SwiperSlide>

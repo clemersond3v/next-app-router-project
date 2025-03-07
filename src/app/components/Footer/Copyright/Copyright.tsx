@@ -1,33 +1,22 @@
-import Image from "next/image"
-import styles from "./Copyright.module.scss";
+import Link from "next/link";
+
 
 const Copyright: React.FC = () => {
   return (
-    <div className={styles["footer-copyright"]}>
-      <div className={styles["footer-copyright--policy-group"]}>
-        <div className={styles["footer-copyright--policy-group__copyright"]}>
+    <div>
+      <div className="max-w-container mx-auto flex flex-col items-center justify-center text-center p-5 text-xs">
+        <div>
           <p>
-            Copyright © 2024 ASICS America Corporation. TODOS LOS DERECHOS
-            RESERVADOS. Las fotografías aquí mostradas, el logotipo y la marca
-            son propiedad de ASICS America Corporation. Queda prohibida la
-            reproducción, total o parcial, sin autorización expresa del
-            administrador del sitio. El diseño de rayas en el lateral de las
-            Zapatillas ASICS M.R. es una marca registrada de ASICS Corporation.
+            © 2025 BookVerso. Todos os direitos reservados.  
+            Proibida a reprodução total ou parcial sem autorização.  
+            BookVerso - Sua próxima leitura começa aqui.
           </p>
         </div>
-        <div className={styles["footer-copyright--policy-group__powered-by"]}>
-          <span className={styles["footer-copyright--policy-group__powered-by__title"]}>
+        <div>
+          <p className="mt-4 font-bold">
             Powered by
-          </span>
-          <Image
-            alt="Vtex Logo"
-            src="/vtex_1.png"
-            title="Vtex Logo"
-            width={70}
-            height={38}
-            className={styles["footer-copyright--policy-group__powered-by__image"]}
-            loading="lazy"
-          />
+          </p>
+          <Link href={"https://www.linkedin.com/in/clemerson-costa-dev/"} target="_blank">Clemerson Costa - Software Engineer</Link>
         </div>
       </div>
     </div>

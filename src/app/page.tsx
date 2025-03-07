@@ -1,8 +1,6 @@
 'use client'
 
-
 import Image from "next/image";
-import styles from './Home.module.scss';
 import dynamic from 'next/dynamic';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -11,18 +9,19 @@ import 'swiper/css/navigation';
 import { Autoplay, Navigation } from 'swiper/modules';
 import Link from "next/link";
 
+const loadingBook = "/book-loading.gif";
+
 const Shelves = dynamic(() => import('./components/Shelves/Shelves'), {
   ssr: false,
-  loading: () => <p>Carregando prateleira...</p>,
+  loading: () => <div className="max-w-container mx-auto p-4 flex items-center justify-center"><Image src={loadingBook} alt="carregando prateleiras" width={150} height={150} /></div>,
 });
 
-export default function Home() {
-
-  
+export default function Home() {  
   return (    
-    <main className={styles["home-page"]}>
-      <div className={styles["home-page--mainBanners"]}>
+    <main className="max-w-[1920px] mx-auto">
+      <div>
         <Swiper
+          className="max-w-[1920px] mx-auto"
           modules={[Autoplay, Navigation]}
           loop={true}
           spaceBetween={0}
@@ -35,7 +34,7 @@ export default function Home() {
           navigation={true}
         >
           <SwiperSlide>
-            <Link href="/" className={styles["home-page--mainBanners-item"]}>
+            <Link href="/" className="block w-fit mx-auto">
               <picture>            
                 <source 
                   media="(max-width: 768px)" 
@@ -54,7 +53,7 @@ export default function Home() {
           </SwiperSlide>
           
           <SwiperSlide>
-            <Link href="/" className={styles["home-page--mainBanners-item"]}>
+            <Link href="/" className="block w-fit mx-auto">
               <picture>
                 <source 
                   media="(max-width: 768px)" 
@@ -68,7 +67,7 @@ export default function Home() {
         </Swiper>
       </div>
 
-      <div className={styles["home-shelves"]}>
+      <div>
           <Shelves />
       </div>
     </main>    
