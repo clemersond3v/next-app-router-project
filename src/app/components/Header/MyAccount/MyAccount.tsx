@@ -15,7 +15,7 @@ const MyAccount: React.FC = () => {
     }, []);
     
     return (
-        <button className="flex items-center gap-1 xl:border-[1px] xl:border-bglight500 xl:rounded-md xl:p-1">
+        <button className="flex items-center gap-1 xl:border-[1px] xl:border-bglight500 xl:rounded-md xl:p-1" name="Botão de minha conta" aria-label="Botão de minha conta">
             <PiUserCircleLight size={30} color="#001e62" />
 
             {!isMobile && (
