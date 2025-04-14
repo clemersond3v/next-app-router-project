@@ -1135,7 +1135,7 @@
 
 "@lhci/cli@^0.14.0":
   version "0.14.0"
-  resolved "https://registry.npmjs.org/@lhci/cli/-/cli-0.14.0.tgz"
+  resolved "https://registry.yarnpkg.com/@lhci/cli/-/cli-0.14.0.tgz#5c78d3bc2303f16eebf89ab622d341f9ba2c7523"
   integrity sha512-TxOH9pFBnmmN7Jmo2Aimxx5UhE8veqXpHfFJDMWsCVxkwh7mGxcAWchGl84mK139SZbbRmerqZ72c+h2nG9/QQ==
   dependencies:
     "@lhci/utils" "0.14.0"
@@ -1243,10 +1243,10 @@
   resolved "https://registry.npmjs.org/@nolyfill/is-core-module/-/is-core-module-1.0.39.tgz"
   integrity sha512-nn5ozdjYQpUCZlWGuxcJY/KpxkWQs4DcbMCmKojjyrYDEAGy4Ce19NN4v5MduafTwJlbKc99UA8YhSVqq9yPZA==
 
-"@paulirish/trace_engine@0.0.44":
-  version "0.0.44"
-  resolved "https://registry.npmjs.org/@paulirish/trace_engine/-/trace_engine-0.0.44.tgz"
-  integrity sha512-QjDv5qVaUXd5WZzE2ktKvqtGA17v4HFtj6MROCGkK57AZr9n0ZKgcx7dEFho+5EHZ6V6h1upW2eqheo8C4Y4dA==
+"@paulirish/trace_engine@0.0.50":
+  version "0.0.50"
+  resolved "https://registry.yarnpkg.com/@paulirish/trace_engine/-/trace_engine-0.0.50.tgz#888fee52e3c4be18ec7c350ddfa40b1df5cbb2c0"
+  integrity sha512-ktkbISnr0T9dkOxtnEadjYsbArMcvX2Wp8zwgyIP6KW0eOk2Oe2s49BY4v0qdE3uQdVv/GDdQ6MnoIFuYNJ9pg==
   dependencies:
     third-party-web latest
 
@@ -1313,6 +1313,19 @@
   resolved "https://registry.npmjs.org/@protobufjs/utf8/-/utf8-1.1.0.tgz"
   integrity sha512-Vvn3zZrhQZkkBE8LSuW3em98c0FwgO4nxzv6OdSxPKJIEKY2bGbHn+mhGIPerzI4twdxaP8/0+06HBpwf345Lw==
 
+"@puppeteer/browsers@2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@puppeteer/browsers/-/browsers-2.10.0.tgz#a6e55bf85bfcc819e5e8c79f6122cccaa52515a4"
+  integrity sha512-HdHF4rny4JCvIcm7V1dpvpctIGqM3/Me255CB44vW7hDG1zYMmcBMjpNqZEDxdCfXGLkx5kP0+Jz5DUS+ukqtA==
+  dependencies:
+    debug "^4.4.0"
+    extract-zip "^2.0.1"
+    progress "^2.0.3"
+    proxy-agent "^6.5.0"
+    semver "^7.7.1"
+    tar-fs "^3.0.8"
+    yargs "^17.7.2"
+
 "@puppeteer/browsers@2.3.0":
   version "2.3.0"
   resolved "https://registry.npmjs.org/@puppeteer/browsers/-/browsers-2.3.0.tgz"
@@ -1325,19 +1338,6 @@
     semver "^7.6.3"
     tar-fs "^3.0.6"
     unbzip2-stream "^1.4.3"
-    yargs "^17.7.2"
-
-"@puppeteer/browsers@2.7.1":
-  version "2.7.1"
-  resolved "https://registry.npmjs.org/@puppeteer/browsers/-/browsers-2.7.1.tgz"
-  integrity sha512-MK7rtm8JjaxPN7Mf1JdZIZKPD2Z+W7osvrC1vjpvfOX1K0awDIHYbNi89f7eotp7eMUn2shWnt03HwVbriXtKQ==
-  dependencies:
-    debug "^4.4.0"
-    extract-zip "^2.0.1"
-    progress "^2.0.3"
-    proxy-agent "^6.5.0"
-    semver "^7.7.0"
-    tar-fs "^3.0.8"
     yargs "^17.7.2"
 
 "@rtsao/scc@^1.1.0":
@@ -2406,10 +2406,15 @@ available-typed-arrays@^1.0.7:
   dependencies:
     possible-typed-array-names "^1.0.0"
 
-axe-core@^4.10.0, axe-core@^4.10.2, axe-core@^4.9.1:
+axe-core@^4.10.0, axe-core@^4.9.1:
   version "4.10.2"
   resolved "https://registry.npmjs.org/axe-core/-/axe-core-4.10.2.tgz"
   integrity sha512-RE3mdQ7P3FRSe7eqCWoeQ/Z9QXrtniSjp1wUjt5nRC3WIpz5rSCve6o3fsZ2aCpJtrZjSZgjwXAoTO5k4tEI0w==
+
+axe-core@^4.10.3:
+  version "4.10.3"
+  resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-4.10.3.tgz#04145965ac7894faddbac30861e5d8f11bfd14fc"
+  integrity sha512-Xm7bpRXnDSX2YE2YFfBk2FnF0ep6tmG7xPh8iHee8MIcrgq762Nkce856dYtJYLkuIoYZvGfTs/PbZhideTcEg==
 
 axobject-query@^4.1.0:
   version "4.1.0"
@@ -2761,10 +2766,10 @@ chromium-bidi@0.6.3:
     urlpattern-polyfill "10.0.0"
     zod "3.23.8"
 
-chromium-bidi@2.1.2:
-  version "2.1.2"
-  resolved "https://registry.npmjs.org/chromium-bidi/-/chromium-bidi-2.1.2.tgz"
-  integrity sha512-vtRWBK2uImo5/W2oG6/cDkkHSm+2t6VHgnj+Rcwhb0pP74OoUb4GipyRX/T/y39gYQPhioP0DPShn+A7P6CHNw==
+chromium-bidi@3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/chromium-bidi/-/chromium-bidi-3.0.0.tgz#bfb0549db96552d42377401aadc0198a1bbb3e9f"
+  integrity sha512-ZOGRDAhBMX1uxL2Cm2TDuhImbrsEz5A/tTcVU6RpXEWaTNUNwsHW6njUXizh51Ir6iqHbKAfhA2XK33uBcLo5A==
   dependencies:
     mitt "^3.0.1"
     zod "^3.24.1"
@@ -3205,15 +3210,15 @@ devtools-protocol@0.0.1312386:
   resolved "https://registry.npmjs.org/devtools-protocol/-/devtools-protocol-0.0.1312386.tgz"
   integrity sha512-DPnhUXvmvKT2dFA/j7B+riVLUt9Q6RKJlcppojL5CoRywJJKLDYnRlw0gTFKfgDPHP5E04UoB71SxoJlVZy8FA==
 
-devtools-protocol@0.0.1402036:
-  version "0.0.1402036"
-  resolved "https://registry.npmjs.org/devtools-protocol/-/devtools-protocol-0.0.1402036.tgz"
-  integrity sha512-JwAYQgEvm3yD45CHB+RmF5kMbWtXBaOGwuxa87sZogHcLCv8c/IqnThaoQ1y60d7pXWjSKWQphPEc+1rAScVdg==
+devtools-protocol@0.0.1425554:
+  version "0.0.1425554"
+  resolved "https://registry.yarnpkg.com/devtools-protocol/-/devtools-protocol-0.0.1425554.tgz#51ed2fed1405f56783d24a393f7c75b6bbb58029"
+  integrity sha512-uRfxR6Nlzdzt0ihVIkV+sLztKgs7rgquY/Mhcv1YNCWDh5IZgl5mnn2aeEnW5stYTE0wwiF4RYVz8eMEpV1SEw==
 
-devtools-protocol@0.0.1423531:
-  version "0.0.1423531"
-  resolved "https://registry.npmjs.org/devtools-protocol/-/devtools-protocol-0.0.1423531.tgz"
-  integrity sha512-z6cOcajZWxk80zvFnkTGa7tj3oqF+C5SnOF1KSMeAr5/WW/nLNHlEpKr7voSzMz8IaUoq5rjdI0Mqv5k/BUkhg==
+devtools-protocol@0.0.1436416:
+  version "0.0.1436416"
+  resolved "https://registry.yarnpkg.com/devtools-protocol/-/devtools-protocol-0.0.1436416.tgz#ce8af8a210b8bcac83c5c8f095b9f977a9570df0"
+  integrity sha512-iGLhz2WOrlBLcTcoVsFy5dPPUqILG6cc8MITYd5lV6i38gWG14bMXRH/d8G5KITrWHBnbsOnWHfc9Qs4/jej9Q==
 
 didyoumean@^1.2.2:
   version "1.2.2"
@@ -5439,18 +5444,18 @@ lighthouse@12.1.0:
     yargs "^17.3.1"
     yargs-parser "^21.0.0"
 
-lighthouse@^12.4.0:
-  version "12.4.0"
-  resolved "https://registry.npmjs.org/lighthouse/-/lighthouse-12.4.0.tgz"
-  integrity sha512-1p/YKQpMqfYVSKVOB43RG3xbnxkSUOG0zqVm/bxJHAaAHKrEACgFi8HZxD9CCTFrt+d/Q/x9gjDyeUDarm1SIg==
+lighthouse@^12.5.1:
+  version "12.5.1"
+  resolved "https://registry.yarnpkg.com/lighthouse/-/lighthouse-12.5.1.tgz#92895d83355ef7e34cdeb9eac471b74e43b4d734"
+  integrity sha512-ooOIqtBxOEnuX3yKtc8WiMPI/fPqHtXHaXU4ey87icRcY5I2B9+imk8i6U7duIO+yrU0WwbIwhmCs8s/FFNRgA==
   dependencies:
-    "@paulirish/trace_engine" "0.0.44"
+    "@paulirish/trace_engine" "0.0.50"
     "@sentry/node" "^7.0.0"
-    axe-core "^4.10.2"
+    axe-core "^4.10.3"
     chrome-launcher "^1.1.2"
     configstore "^5.0.1"
     csp_evaluator "1.1.5"
-    devtools-protocol "0.0.1423531"
+    devtools-protocol "0.0.1436416"
     enquirer "^2.3.6"
     http-link-header "^1.1.1"
     intl-messageformat "^10.5.3"
@@ -5463,7 +5468,7 @@ lighthouse@^12.4.0:
     metaviewport-parser "0.3.0"
     open "^8.4.0"
     parse-cache-control "1.0.1"
-    puppeteer-core "^24.3.0"
+    puppeteer-core "^24.4.0"
     robots-parser "^3.0.1"
     semver "^5.3.0"
     speedline-core "^1.4.3"
@@ -6343,15 +6348,15 @@ puppeteer-core@^22.11.1:
     devtools-protocol "0.0.1312386"
     ws "^8.18.0"
 
-puppeteer-core@^24.3.0:
-  version "24.3.1"
-  resolved "https://registry.npmjs.org/puppeteer-core/-/puppeteer-core-24.3.1.tgz"
-  integrity sha512-585ccfcTav4KmlSmYbwwOSeC8VdutQHn2Fuk0id/y/9OoeO7Gg5PK1aUGdZjEmos0TAq+pCpChqFurFbpNd3wA==
+puppeteer-core@^24.4.0:
+  version "24.6.1"
+  resolved "https://registry.yarnpkg.com/puppeteer-core/-/puppeteer-core-24.6.1.tgz#fc2ea21a49d6d8240cc959b729a12ba976ac140a"
+  integrity sha512-sMCxsY+OPWO2fecBrhIeCeJbWWXJ6UaN997sTid6whY0YT9XM0RnxEwLeUibluIS5/fRmuxe1efjb5RMBsky7g==
   dependencies:
-    "@puppeteer/browsers" "2.7.1"
-    chromium-bidi "2.1.2"
+    "@puppeteer/browsers" "2.10.0"
+    chromium-bidi "3.0.0"
     debug "^4.4.0"
-    devtools-protocol "0.0.1402036"
+    devtools-protocol "0.0.1425554"
     typed-query-selector "^2.12.0"
     ws "^8.18.1"
 
@@ -6665,7 +6670,7 @@ semver@^6.0.0, semver@^6.3.0, semver@^6.3.1:
   resolved "https://registry.npmjs.org/semver/-/semver-6.3.1.tgz"
   integrity sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==
 
-semver@^7.5.3, semver@^7.5.4, semver@^7.6.0, semver@^7.6.3, semver@^7.7.0, semver@^7.7.1:
+semver@^7.5.3, semver@^7.5.4, semver@^7.6.0, semver@^7.6.3, semver@^7.7.1:
   version "7.7.1"
   resolved "https://registry.npmjs.org/semver/-/semver-7.7.1.tgz"
   integrity sha512-hlq8tAfn0m/61p4BVRcPzIGr6LKiMwo4VM6dGi6pt4qcRkmNzTcWq6eCEjEh+qXjkMDvPlOFFSGwQjoEa6gyMA==
