@@ -21,25 +21,25 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 20 # Atualizado para 20, igual ao test.yml
 
-      # 3. Instalar dependências do sistema para o Chrome e o XVFB (🚀 REMOVIDO `libasound2`)
+      # 3. Instalar dependências do sistema para o Chrome e o XVFB
       - name: Install Chrome and XVFB
         run: |
           sudo apt-get update
           sudo apt-get install -y google-chrome-stable xvfb libnss3 libatk1.0-0 libx11-xcb1 libxcomposite1 libxcursor1 libxdamage1 libxrandr2 libgbm-dev
 
-      # 4. Instalar dependências do projeto
+      # 4. Instalar dependências do projeto com Yarn
       - name: Install dependencies
-        run: npm install
+        run: yarn install --frozen-lockfile # <-- Corrigido aqui!
 
       # 5. Build do projeto Next.js
       - name: Build project
-        run: npm run build
+        run: yarn build # <-- Corrigido aqui!
 
       # 6. Iniciar o servidor local
       - name: Start server
-        run: npm start &
+        run: yarn start &
         env:
           PORT: 3000
 
@@ -59,6 +59,6 @@ jobs:
           name: lighthouse-report
           path: ./lighthouse-report.json
 
-      # 10. Verificar média dos scores do Lighthouse
+      # 10. Rodar Lighthouse CI (lhci autorun)
       - name: Run Lighthouse CI
         run: npx lhci autorun
