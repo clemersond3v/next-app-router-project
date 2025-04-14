@@ -6,7 +6,7 @@ import { Suspense, useState } from "react";
 import Loading from "./loading";
 // import ApolloProviderWrapper from "./components/ApolloProviderWrapper";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-
+import Seo from './components/SEO/Seo';
 import { Roboto } from "next/font/google";
 
 const roboto = Roboto({
@@ -20,6 +20,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   
   return (
     <html lang="pt" className={roboto.variable}>
+      <Seo title="Minha Loja | Produtos de Qualidade" description="Encontre os melhores produtos com os melhores preços!" />
       <body>        
         <QueryClientProvider client={queryClient}>
           <Header />
