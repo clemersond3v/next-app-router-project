@@ -7,7 +7,7 @@ import { Autoplay } from 'swiper/modules';
 
 const TopBar: React.FC = () => {
     return (
-        <div className="bg-bglight500 overflow-hidden">
+        <div className="bg-black overflow-hidden">
             <div>
                 <Swiper
                     modules={[Autoplay]}
