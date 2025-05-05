@@ -2,28 +2,60 @@ name: Run Tests
 
 on:
   pull_request:
-    branches:
-      - main
-      - develop
+    branches: [main, develop]
   push:
-    branches:
-      - main
-      - develop
+    branches: [main, develop]
 
 jobs:
-  test:
+  unit-tests:
+    name: 🧪 Unit + Component Tests (jsdom)
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
+      - name: 📥 Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: 🔧 Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      - name: Install dependencies
+      - name: 📦 Install dependencies
         run: yarn install
 
-      - name: Run Tests with Coverage
-        run: yarn test --coverage
+      - name: 🧪 Run Unit & Component Tests with Coverage
+        run: yarn test --coverage --testPathPattern=tests/unit
+
+  integration-tests:
+    name: 🔌 Integration Tests (GraphQL API)
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: 📦 Install dependencies
+        run: yarn install
+
+      - name: 🏗️ Build project
+        run: yarn build
+
+      - name: 🚀 Start server in background
+        run: yarn start &
+        env:
+          PORT: 3000
+
+      - name: ⏱️ Wait for server to be ready
+        run: |
+          echo "Aguardando http://localhost:3000..."
+          until curl --output /dev/null --silent --head --fail http://localhost:3000; do
+            printf '.'
+            sleep 1
+          done
+          echo "Servidor iniciado com sucesso!"
+
+      - name: 🔌 Run Integration Tests
+        run: yarn test --testPathPattern=tests/integration
