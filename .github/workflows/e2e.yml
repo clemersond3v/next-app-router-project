@@ -25,17 +25,10 @@ jobs:
       - name: Build Next.js project
         run: yarn build
 
-      - name: Start server
-        run: yarn start &
-        env:
-          PORT: 3000
-
-      - name: Wait for server to be ready
-        run: npx wait-on http://localhost:3000
-
       - name: Run Cypress tests
         uses: cypress-io/github-action@v6
         with:
-          start: false
-          browser: chrome
+          start: yarn start
           wait-on: 'http://localhost:3000'
+          wait-on-timeout: 60 # segundos
+          browser: chrome
