@@ -1,6 +1,7 @@
 // jest.setup.ts
 import React from 'react';
 import '@testing-library/jest-dom';
+import 'whatwg-fetch';
 
 // Mock do next/image
 jest.mock('next/image', () => ({

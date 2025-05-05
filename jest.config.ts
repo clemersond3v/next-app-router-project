@@ -1,21 +1,32 @@
-import { Config } from 'jest';
+import type { Config } from 'jest';
 
 const config: Config = {
-  verbose: true,
-  setupFilesAfterEnv: ['<rootDir>/jest.setup.tsx'],
-  moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/src/$1',
-  },
-  testEnvironment: 'jsdom',
-  transform: {
-    '^.+\\.(ts|tsx)$': '@swc/jest', // ✅ apenas string aqui
-  },
-  transformIgnorePatterns: [
-    'node_modules/(?!(swiper)/)',
-  ],
-  testMatch: [
-    '**/tests/unit/**/*.test.ts?(x)',
-    '**/tests/integration/**/*.test.ts?(x)',
+  // Não defina `testEnvironment` aqui na raiz, pois usaremos `projects`
+  projects: [
+    {
+      displayName: 'unit',
+      testMatch: ['**/tests/unit/**/*.test.ts?(x)'],
+      testEnvironment: 'jsdom',
+      setupFilesAfterEnv: ['<rootDir>/jest.setup.tsx'],
+      transform: {
+        '^.+\\.(ts|tsx)$': '@swc/jest',
+      },
+      moduleNameMapper: {
+        '^@/(.*)$': '<rootDir>/src/$1',
+      },
+      transformIgnorePatterns: ['node_modules/(?!(swiper)/)'],
+    },
+    {
+      displayName: 'integration',
+      testMatch: ['**/tests/integration/**/*.test.ts?(x)'],
+      testEnvironment: 'node',
+      transform: {
+        '^.+\\.(ts|tsx)$': '@swc/jest',
+      },
+      moduleNameMapper: {
+        '^@/(.*)$': '<rootDir>/src/$1',
+      },
+    },
   ],
   collectCoverage: true,
   coverageDirectory: 'coverage',
