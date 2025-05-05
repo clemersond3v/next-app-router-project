@@ -47,6 +47,7 @@ async function getProductsByCategory(categorySlug: string): Promise<Product[]> {
 
     return data.products.filter((p: Product) => p.category.slug === categorySlug);
   } catch (error) {
+    console.error("❌ Erro ao buscar os produtos:", error);
     return [];
   }
 }
